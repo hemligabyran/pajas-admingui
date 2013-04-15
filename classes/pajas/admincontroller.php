@@ -1,0 +1,80 @@
+<?php defined('SYSPATH') OR die('No direct access allowed.');
+
+abstract class Pajas_Admincontroller extends Xsltcontroller
+{
+
+	/**
+	 * Loads URI, and Input into this controller.
+	 *
+	 * @return	void
+	 */
+	public function __construct(Request $request, Response $response)
+	{
+		parent::__construct($request, $response);
+
+		if ($this->xslt_stylesheet == FALSE)
+			$this->xslt_stylesheet = 'admin/'.$this->request->controller();
+
+		$this->acl_redirect_url = '/admin/login';
+
+		if (class_exists('User'))
+		{
+			/**
+			 * Must be a logged in user with admin role to access the admin pages
+			 */
+			$user = User::instance();
+
+			if ($user->logged_in())
+			{
+				$user_data = array(
+					'@id'      => $user->get_user_id(),
+					'username' => $user->get_username(),
+					'data'     => array(),
+				);
+				foreach ($user->get_user_data() as $field_name => $field_value)
+					$user_data['data']['field name="' . $field_name . '"'] = $field_value;
+
+				xml::to_XML(array('user_data' => $user_data), $this->xml_meta);
+			}
+		}
+
+		if ($this->request->controller() != 'login')
+		{
+
+			/**
+			 * Build the menu alternatives
+			 */
+
+			// First we need to create the container for the options
+			$this->menuoptions_node = $this->xml_content->appendChild($this->dom->createElement('menuoptions'));
+
+			// First add the default home-alternative
+			xml::to_XML(
+				array(array( // Just simulating the config reading, thats why it looks odd :p
+					'name'        => 'Home',
+					'@category'   => '',
+					'description' => 'Admin home page with descriptions of the available admin pages',
+					'href'        => '',
+					'position'    => 0,
+				)),
+				$this->menuoptions_node,
+				'menuoption'
+			);
+
+			// Then we populate this container with options from the config files, and group them by 'menuoption'
+			foreach (Kohana::$config->load('admin_menu_options') as $menu_option)
+			{
+				if ($user->has_access_to(URL::base().'admin/'.$menu_option['href']))
+				{
+					xml::to_XML(
+						array($menu_option),                 // Array to make XML from
+						$this->menuoptions_node,             // Container node
+						'menuoption'                         // Put each group in a node with this name
+					);
+				}
+		  }
+
+		}
+	}
+
+}
