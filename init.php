@@ -14,11 +14,11 @@ if (
 		array(':kohana_version', Kohana::VERSION));
 
 // Check for pajas-user
-if ( ! version_compare(PAJAS_USER_VERSION, '1.0'))
+if ( ! version_compare(PAJAS_USER_VERSION, '1.0', '='))
 	throw new Kohana_Exception('Pajas user module version 1.0 required');
 
 // Check for pajas-xslt
-if ( ! version_compare(PAJAS_XSLT_VERSION, '1.0'))
+if ( ! version_compare(PAJAS_XSLT_VERSION, '1.0', '='))
 	throw new Kohana_Exception('Pajas XSLT module version 1.0 required');
 
 Route::set('admin', 'admin/<controller>(/<action>(/<options>))',
