@@ -19,9 +19,7 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 
 		if (class_exists('User'))
 		{
-			/**
-			 * Must be a logged in user with admin role to access the admin pages
-			 */
+			// Must be a logged in user with admin role to access the admin pages
 			$user = User::instance();
 
 			if ($user->logged_in())
@@ -40,10 +38,7 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 
 		if ($this->request->controller() != 'login')
 		{
-
-			/**
-			 * Build the menu alternatives
-			 */
+			// Build the menu alternatives
 
 			// First we need to create the container for the options
 			$this->menuoptions_node = $this->xml_content->appendChild($this->dom->createElement('menuoptions'));
@@ -67,14 +62,12 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 				if ($user->has_access_to(URL::base().'admin/'.$menu_option['href']))
 				{
 					xml::to_XML(
-						array($menu_option),                 // Array to make XML from
-						$this->menuoptions_node,             // Container node
-						'menuoption'                         // Put each group in a node with this name
+						array($menu_option),     // Array to make XML from
+						$this->menuoptions_node, // Container node
+						'menuoption'             // Put each group in a node with this name
 					);
 				}
 		  }
-
 		}
 	}
-
 }
