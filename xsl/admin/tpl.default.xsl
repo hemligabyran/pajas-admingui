@@ -31,7 +31,7 @@
 
 				<!-- jQuery -->
 				<script type="text/javascript" src="http://code.jquery.com/jquery.min.js" />
-				<script type="text/javascript" src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js" />
+				<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
 				<link type="text/css" rel="stylesheet" media="all" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 
 				<!-- Custom CSS files -->
