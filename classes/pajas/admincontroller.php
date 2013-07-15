@@ -25,7 +25,7 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 			if ($user->logged_in())
 			{
 				$user_data = array(
-					'@id'      => $user->get_user_id(),
+					'@id'      => $user->id,
 					'username' => $user->get_username(),
 					'data'     => array(),
 				);
