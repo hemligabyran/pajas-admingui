@@ -17,25 +17,6 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 
 		$this->acl_redirect_url = '/admin/login';
 
-		if (class_exists('User'))
-		{
-			// Must be a logged in user with admin role to access the admin pages
-			$user = User::instance();
-
-			if ($user->logged_in())
-			{
-				$user_data = array(
-					'@id'      => $user->id,
-					'username' => $user->get_username(),
-					'data'     => array(),
-				);
-				foreach ($user->get_user_data() as $field_name => $field_value)
-					$user_data['data']['field name="' . $field_name . '"'] = $field_value;
-
-				xml::to_XML(array('user_data' => $user_data), $this->xml_meta);
-			}
-		}
-
 		if ($this->request->controller() != 'login')
 		{
 			// Build the menu alternatives
@@ -67,7 +48,7 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 						'menuoption'             // Put each group in a node with this name
 					);
 				}
-		  }
+			}
 		}
 	}
 }
