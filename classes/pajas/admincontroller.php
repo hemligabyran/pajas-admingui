@@ -40,7 +40,7 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 			// Then we populate this container with options from the config files, and group them by 'menuoption'
 			foreach (Kohana::$config->load('admin_menu_options') as $menu_option)
 			{
-				if ($user->has_access_to(URL::base().'admin/'.$menu_option['href']))
+				if (User::instance()->has_access_to(URL::base().'admin/'.$menu_option['href']))
 				{
 					xml::to_XML(
 						array($menu_option),     // Array to make XML from
