@@ -2,16 +2,14 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:template name="header">
-		<div id="header">
-			<p id="logo">Pajas</p>
-			<p class="info">
-				<!--LARV IT AB [<a href="#">edit</a>] <span>|</span> -->
-
+		<header class="pageheader clear">
+			<h1 class="heading left">ByggFrank Admin</h1>
+			<div class="account right">
 				<xsl:if test="/root/meta/user_data">
-					<xsl:text>Logged in as: </xsl:text><xsl:value-of select="/root/meta/user_data/username" /> [<a href="logout">logout</a>]
+					<span class="left"><xsl:text>Logged in as: </xsl:text><xsl:value-of select="/root/meta/user_data/username" /></span><a class="left stronglink" href="logout">Logga ut ›</a>
 				</xsl:if>
-			</p>
-		</div>
+			</div>
+		</header>
 	</xsl:template>
 
 	<!-- The small tab thingies in the top of every admin page -->

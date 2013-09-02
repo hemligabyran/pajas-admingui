@@ -24,13 +24,15 @@
 		<html>
 			<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<link type="text/css" href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" />
+				<link type="text/css" href="http://fonts.googleapis.com/css?family=Chau+Philomene+One" rel="stylesheet" />
+				<link type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 				<link type="text/css" href="{/root/meta/base}css/admin/style.css" rel="stylesheet" media="all" />
-
 				<link href='http://fonts.googleapis.com/css?family=Cuprum&amp;subset=latin' rel='stylesheet' type='text/css' />
 				<base href="http://{root/meta/domain}{/root/meta/base}admin/" />
 
 				<!-- jQuery -->
-				<script type="text/javascript" src="http://code.jquery.com/jquery.min.js" />
+				<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js" />
 				<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
 				<link type="text/css" rel="stylesheet" media="all" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 
@@ -59,68 +61,43 @@
 				<![endif]-->
 			</head>
 			<body>
-
-				<xsl:call-template name="header" />
-
-				<div class="colsoutercontainer">
-					<div class="colscontainer">
-
-						<div class="contentwrap">
-							<div class="contentwrap2">
-
-								<h1><xsl:value-of select="$h1" /></h1>
-								<xsl:call-template name="tabs" />
-								<div class="content">
-									<!-- Content start -->
-
-									<xsl:for-each select="/root/content/errors/error">
-										<div class="error"><xsl:value-of select="." /></div>
-									</xsl:for-each>
-									<xsl:for-each select="/root/content/messages/message">
-										<div class="message"><xsl:value-of select="." /></div>
-									</xsl:for-each>
-
-									<xsl:apply-templates select="/root/content" />
-
-									<!-- Content end -->
-								</div>
-
-							</div>
-						</div>
-
-						<div class="menu">
-							<!-- Menu start -->
-
-							<xsl:for-each select="/root/content/menuoptions/menuoption">
-								<xsl:sort select="@category" />
-								<xsl:if test="generate-id() = generate-id(key('nav_categories',@category))">
-									<div>
-										<p>
-											<xsl:if test="@category != ''">
-												<xsl:value-of select="@category" />
-											</xsl:if>
-											<xsl:if test="@category = ''">
-												<xsl:text>System</xsl:text>
-											</xsl:if>
-										</p>
-										<ul>
-											<xsl:call-template name="menuoptions">
-												<xsl:with-param name="cat_name" select="@category" />
-											</xsl:call-template>
-										</ul>
-									</div>
+				<nav class="main_nav nav left" role="navigation">
+					<h1 class="branding"><a class="logo" href="#">Pajas</a></h1>
+					<xsl:for-each select="/root/content/menuoptions/menuoption">
+						<xsl:sort select="@category" />
+						<xsl:if test="generate-id() = generate-id(key('nav_categories',@category))">
+							<h3 class="menuheading">
+								<xsl:if test="@category != ''">
+									<xsl:value-of select="@category" />
 								</xsl:if>
+								<xsl:if test="@category = ''">
+									<xsl:text>System</xsl:text>
+								</xsl:if>
+							</h3>
+							<ul class="list menu" role="navigation">
+								<xsl:call-template name="menuoptions">
+									<xsl:with-param name="cat_name" select="@category" />
+								</xsl:call-template>
+							</ul>
+						</xsl:if>
+					</xsl:for-each>
+				</nav>
+				<div class="page_content left">
+					<xsl:call-template name="header" />
+						<!--h1><xsl:value-of select="$h1" /></h1-->
+						<xsl:call-template name="tabs" />
+						<div class="content">
+							<!-- Content start -->
+							<xsl:for-each select="/root/content/errors/error">
+								<div class="error"><xsl:value-of select="." /></div>
 							</xsl:for-each>
-
-							<!-- Menu end -->
+							<xsl:for-each select="/root/content/messages/message">
+								<div class="message"><xsl:value-of select="." /></div>
+							</xsl:for-each>
+							<xsl:apply-templates select="/root/content" />
+							<!-- Content end -->
 						</div>
-
-					</div>
 				</div>
-
-				<!--div id="footer">
-					Fot
-				</div-->
 			</body>
 		</html>
 	</xsl:template>
@@ -131,7 +108,7 @@
 		<xsl:for-each select="/root/content/menuoptions/menuoption">
 			<xsl:sort select="position" />
 			<xsl:if test="@category = $cat_name">
-				<li>
+				<li class="item">
 					<a href="{href}">
 						<xsl:if test="/root/meta/admin_page = name">
 							<xsl:attribute name="class">selected</xsl:attribute>
@@ -144,7 +121,9 @@
 				</li>
 			</xsl:if>
 		</xsl:for-each>
-
+			<li class="item active">
+				<a href="#">Aktiv</a>
+			</li>
 	</xsl:template>
 
 </xsl:stylesheet>
