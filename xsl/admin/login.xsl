@@ -16,44 +16,26 @@
 				<link href='http://fonts.googleapis.com/css?family=Cuprum&amp;subset=latin' rel='stylesheet' type='text/css' />
 				<base href="http://{root/meta/domain}{/root/meta/base}admin/" />
 				<title>Admin - Login</title>
-				<!--[if lt IE 7]>
-					<style media="screen" type="text/css">
-						.contentwrap2
-						{
-							width: 100%;
-						}
-					</style>
-				<![endif]-->
 			</head>
 			<body>
-				<xsl:call-template name="header" />
-
-				<div id="loginboxcontainer">
-					<div id="loginbox">
-						<h1>Login</h1>
-						<form method="post" action="login/do">
-							<table>
-								<xsl:if test="root/content/error">
-									<tr>
-										<td colspan="2" class="error"><xsl:value-of select="root/content/error" /></td>
-									</tr>
-								</xsl:if>
-								<tr>
-									<td><label for="username">Username:</label></td>
-									<td><input type="text" name="username" id="username" /></td>
-								</tr>
-								<tr>
-									<td><label for="password">Password:</label></td>
-									<td><input type="password" name="password" /></td>
-								</tr>
-								<tr>
-									<td colspan="2"><input type="submit" value="Login" class="button" /></td>
-								</tr>
-							</table>
-						</form>
-					</div>
+				<div class="login_container">
+					<!--h1>Pajas</h1-->
+					<form method="post" action="login/do">
+						<fieldset>
+							<div class="login_inputwrapper">
+								<label for="username">Username:</label>
+								<input type="text" name="username" id="username" />
+							</div>
+							<div class="login_inputwrapper">
+								<label for="password">Password:</label>
+								<input type="password" name="password" />
+							</div>
+							<div class="controls">
+								<button class="longman positive">Login ›</button>
+							</div>
+						</fieldset>
+					</form>
 				</div>
-
 			</body>
 		</html>
 	</xsl:template>

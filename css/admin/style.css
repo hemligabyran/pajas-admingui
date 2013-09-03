@@ -186,11 +186,11 @@
 		border-radius:                  5px;
 		color:                          #fff;
 		font:                           inherit;
-		padding:                        .5rem 1rem;
+		padding:                        .4rem 1rem;
 		font-weight:                    700;
 		display:                        block;
 		box-shadow:                     none;
-		height:                         3rem;
+		height:                         2.6rem;
 		text-decoration:                none;
 		text-shadow:                    1px 1px rgba(0,0,0,.3);
 	}
@@ -204,6 +204,7 @@
 		{
 			margin-left:                    2rem;
 		}
+
 		.longman.left
 		{
 			margin-right:                   2rem;
@@ -213,6 +214,7 @@
 		{
 			margin-top:                     1.7rem;
 		}
+
 	/* Positive button */
 	.longman.positive
 	{
@@ -277,6 +279,36 @@
 		{
 			margin-left:                     1rem;
 		}
+
+/* #### LOGIN #################################################################### */
+
+	.login_container
+	{
+		width:                          340px;
+		margin:                         10% auto 0 auto;
+	}
+
+		.login_container > form > fieldset
+		{
+			border:                         1px solid #000;
+			background:                     #fff;
+			border-radius:                  0;
+			box-shadow:                     0 0 40px 3px #000;
+			padding:                        20px;
+		}
+
+		.login_inputwrapper
+		{
+			float:                          left;
+			margin:                         0;
+		}
+
+			.login_inputwrapper > input
+			{
+				width:                          300px;
+				line-height:                    30px;
+				height:                         30px;
+			}
 
 /* #### MENUS #################################################################### */
 
@@ -477,6 +509,7 @@
 			{
 				color:                          #fff;
 			}
+
 /* #### RESPONSIVE OVERRIDES ##################################################### */
 
 	/*** NAVIGATION ( < 800px ) ***/
@@ -1278,7 +1311,7 @@
 				padding-right:                  88px;
 			}
 
-/* #### FORMS        ############################################################ */
+/* #### FORMS #################################################################### */
 
 	/*
 		Notes:
@@ -1450,7 +1483,7 @@
 		margin-left:                    1rem;
 	}
 
-/* #### TABLES       ############################################################# */
+/* #### TABLES ################################################################### */
 
 	table
 	{
@@ -1498,7 +1531,7 @@
 			margin-right:                   1rem;
 		}
 
-/* #### SPRITES      ############################################################# */
+/* #### SPRITES ################################################################## */
 
 	/*
 		We always sprite our images if they arent dynamic (added through the admin cms)
