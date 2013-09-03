@@ -28,28 +28,28 @@
 			<body>
 				<xsl:call-template name="header" />
 
-				<div id="loginboxcontainer">
-					<div id="loginbox">
-						<h1>Login</h1>
+				<div class="thin center">
+					<div id="loginbox" class="message">
 						<form method="post" action="login/do">
-							<table>
+							<fieldset>
+								<legend>Login</legend>
 								<xsl:if test="root/content/error">
-									<tr>
-										<td colspan="2" class="error"><xsl:value-of select="root/content/error" /></td>
-									</tr>
+									<div class="message">
+										<xsl:value-of select="root/content/error" />
+									</div>
 								</xsl:if>
-								<tr>
+								<div class="inputwrapper">
 									<td><label for="username">Username:</label></td>
 									<td><input type="text" name="username" id="username" /></td>
-								</tr>
-								<tr>
-									<td><label for="password">Password:</label></td>
-									<td><input type="password" name="password" /></td>
-								</tr>
-								<tr>
-									<td colspan="2"><input type="submit" value="Login" class="button" /></td>
-								</tr>
-							</table>
+								</div>
+								<div class="inputwrapper">
+									<label for="password">Password:</label>
+									<input type="password" name="password" />
+								</div>
+								<div class="controls">
+									<button value="Login" class="longman positive" >Login ›</button>
+								</div>
+							</fieldset>
 						</form>
 					</div>
 				</div>
