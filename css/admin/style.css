@@ -81,6 +81,7 @@
 	.pagewrap,
 	.article_footer,
 	article
+	fieldset
 	{
 		clear:                          both;
 	}
@@ -93,6 +94,8 @@
 	.article_footer:before,
 	article:after,
 	article:before
+	fieldset:after,
+	fieldset:before
 	{
 		clear:                          both;
 		display:                        table;
@@ -164,34 +167,37 @@
 	/*   This is longmans button style.
 	     change the color depending on project
 	*/
+
+	/* Neutral button */
 	.longman
 	{
-		background:                     #73bb4b; /* This is the lighter value */
-		background:                     -moz-linear-gradient(top,     #73bb4b 0%, #5fa737 100%);
-		background:                     -webkit-gradient(linear, left top, left bottom, color-stop(0%,#73bb4b), color-stop(100%,#5fa737));
-		background:                     -webkit-linear-gradient(top,  #73bb4b 0%, #5fa737 100%);
-		background:                     -o-linear-gradient(top,       #73bb4b 0%, #5fa737 100%);
-		background:                     -ms-linear-gradient(top,      #73bb4b 0%, #5fa737 100%);
-		background:                     linear-gradient(to bottom,    #73bb4b 0%, #5fa737 100%);
-		filter:                         progid:DXImageTransform.Microsoft.gradient(startColorstr='#73bb4b', endColorstr='#5fa737',GradientType=0);
+		background:                     #999; /* This is the lighter value */
+		background:                     -moz-linear-gradient(top,     #999 0%, #909090 100%);
+		background:                     -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999), color-stop(100%,#909090));
+		background:                     -webkit-linear-gradient(top,  #999 0%, #909090 100%);
+		background:                     -o-linear-gradient(top,       #999 0%, #909090 100%);
+		background:                     -ms-linear-gradient(top,      #999 0%, #909090 100%);
+		background:                     linear-gradient(to bottom,    #999 0%, #909090 100%);
+		filter:                         progid:DXImageTransform.Microsoft.gradient(startColorstr='#999', endColorstr='#909090',GradientType=0);
 		border:                         none; /* reset */
-		border-bottom:                  1px solid #5fa737;
+		border-bottom:                  1px solid #909090;
 		-webkit-border-radius:          5px;
 		-moz-border-radius:             5px;
 		border-radius:                  5px;
 		color:                          #fff;
-		font:                           1rem/2rem 'Droid Serif', serif;
+		font:                           inherit;
 		padding:                        .5rem 1rem;
+		font-weight:                    700;
 		display:                        block;
-		margin:                         0 auto;
 		box-shadow:                     none;
 		height:                         3rem;
 		text-decoration:                none;
+		text-shadow:                    1px 1px rgba(0,0,0,.3);
 	}
 
 		.longman:hover
 		{
-			background:                     #73bb4b;
+			background:                     #999;
 		}
 
 		.longman.right
@@ -207,6 +213,47 @@
 		{
 			margin-top:                     1.7rem;
 		}
+	/* Positive button */
+	.longman.positive
+	{
+		background:                     #4ae2af; /* This is the lighter value */
+		background:                     -moz-linear-gradient(top,     #4ae2af 0%, #33cc99 100%);
+		background:                     -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4ae2af), color-stop(100%,#33cc99));
+		background:                     -webkit-linear-gradient(top,  #4ae2af 0%, #33cc99 100%);
+		background:                     -o-linear-gradient(top,       #4ae2af 0%, #33cc99 100%);
+		background:                     -ms-linear-gradient(top,      #4ae2af 0%, #33cc99 100%);
+		background:                     linear-gradient(to bottom,    #4ae2af 0%, #33cc99 100%);
+		filter:                         progid:DXImageTransform.Microsoft.gradient(startColorstr='#4ae2af', endColorstr='#33cc99',GradientType=0);
+		border:                         none; /* reset */
+		float:                          right;
+	}
+
+		.longman.positive:hover
+		{
+			background:                     #4ae2af;
+		}
+
+	/* Negative button */
+	.longman.negative
+	{
+		background:                     #f77e41; /* This is the lighter value */
+		background:                     -moz-linear-gradient(top,     #f77e41 0%, #e96827 100%);
+		background:                     -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f77e41), color-stop(100%,#e96827));
+		background:                     -webkit-linear-gradient(top,  #f77e41 0%, #e96827 100%);
+		background:                     -o-linear-gradient(top,       #f77e41 0%, #e96827 100%);
+		background:                     -ms-linear-gradient(top,      #f77e41 0%, #e96827 100%);
+		background:                     linear-gradient(to bottom,    #f77e41 0%, #e96827 100%);
+		filter:                         progid:DXImageTransform.Microsoft.gradient(startColorstr='#f77e41', endColorstr='#e96827',GradientType=0);
+		border:                         none; /* reset */
+
+	}
+
+		.longman.negative:hover
+		{
+			background:                     #f77e41;
+		}
+
+
 
 	/*** stronglink ***/
 	/*   This is the specialzied link
@@ -291,8 +338,21 @@
 	{
 		color:                          #fff;
 		border-bottom:                  1px solid #333;
-		padding:                        5px 0;
+		padding:                        3px 0;
+		position:                       relative;
 	}
+		.menu .item:before
+		{
+			content:                        "";
+			display:                        block;
+			width:                          30px;
+			height:                         30px;
+			position:                       absolute;
+			left:                           0px;
+			top:                            0px;
+			background:                     url('../../../img/admin/sprites.png') no-repeat;
+			background-position:            12px -47px;
+		}
 
 		.menu .item:hover
 		{
@@ -311,12 +371,35 @@
 
 		.menu .item.active
 		{
-			color:                          #7b1323;
-			background:                     url('/img/elements.png') no-repeat;
-			background-position:            3px -34px;
-			margin-left:                    -6px;
-			padding-left:                   6px;
+			color:                          #000;
+			background-color:               #fff;
 		}
+			.menu .item.active:before,
+			.menu .item:hover:before
+			{
+				content:                        "";
+				display:                        block;
+				width:                          30px;
+				height:                         30px;
+				position:                       absolute;
+				left:                           0px;
+				top:                            0px;
+				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background-position:            12px -80px;
+			}
+			.menu .item.active:after
+			{
+				content:                        "";
+				display:                        block;
+				width:                          30px;
+				height:                         30px;
+				background-color:               #ff0000;
+				position:                       absolute;
+				left:                           180px;
+				top:                            0px;
+				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background-position:            0 0;
+			}
 
 		.menu .item > a
 		{
@@ -326,7 +409,74 @@
 			display:                        block;
 			margin-left:                    1rem;
 		}
+			.menu .item > a:after
+			{
+				content:                        "";
+				display:                        block;
+				width:                          30px;
+				height:                         30px;
+				background-color:               #ff0000;
+				position:                       absolute;
+				left:                           142px;
+				top:                            0px;
+				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background-position:            26px -114px;
+			}
+				.menu .item.active > a:after,
+				.menu .item:hover > a:after
+				{
+					content:                        "";
+					display:                        block;
+					width:                          30px;
+					height:                         30px;
+					background-color:               #ff0000;
+					position:                       absolute;
+					left:                           142px;
+					top:                            0px;
+					background:                     url('../../../img/admin/sprites.png') no-repeat;
+					background-position:            26px -149px;
+				}
 
+	.tabs
+	{
+		margin:                         1rem 0;
+	}
+
+	.tabs > .item
+	{
+		height:                         30px;
+		display:                        inline-block;
+		margin-right:                   1rem;
+		padding:                        0 1rem;
+	}
+
+		.tabs > .item.active
+		{
+			background-color:               #33cc99;
+			color:                          #fff;
+			border-radius:                  5px;
+			position:                       relative;
+		}
+			.tabs > .item.active:after
+			{
+				content:                        "";
+				display:                        block;
+				width:                          9px;
+				height:                         6px;
+				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background-position:            0px -227px;
+				margin:                         0 auto;
+			}
+
+			.tabs > .item > a
+			{
+				display:                        block;
+				line-height:                    30px;
+			}
+			.tabs > .item.active > a
+			{
+				color:                          #fff;
+			}
 /* #### RESPONSIVE OVERRIDES ##################################################### */
 
 	/*** NAVIGATION ( < 800px ) ***/
@@ -842,9 +992,10 @@
 
 	.page_content
 	{
-		height:                         100%;
+		min-height:                     100%;
 		background-color:               #fff;
-		padding:                        30px 30px 0 30px;
+		padding:                        30px 20px;
+		max-width:                      80%;
 	}
 
 	.main_nav
@@ -862,6 +1013,7 @@
 			{
 				margin-left:                    2rem;
 			}
+
 	.pagefooter
 	{
 		background-color:               #33cc99;
@@ -1136,6 +1288,7 @@
 	    forms that aren't that interesting
 	    for google anyway.
 	 */
+
 	form
 	{
 		/* Nothing to see here ;) only for searching..*/
@@ -1145,9 +1298,8 @@
 	{
 		display:                        block;
 		clear:                          both;
-		font:                           1rem/2rem 'Droid Serif', serif;
-		font-weight:                    400;
-		color:                          #000;
+		font-weight:                    700;
+		color:                          #999;
 	}
 
 		.search > form label
@@ -1157,12 +1309,17 @@
 
 	.inputwrapper
 	{
-		margin-right:                   20px;
+		margin-right:                   18px;
+		float:                          left;
 	}
-
+		.inputwrapper:nth-child(2n)
+		{
+			margin-right:                   0;
+			float:                          right;
+		}
 	.textfield
 	{
-		width:                          194px;
+		width:                          590px;
 	}
 
 	.textarea
@@ -1197,36 +1354,10 @@
 		clear:                         none;
 	}
 
-	fieldset.content>.wrap.wrap_thin.left
-	{
-		max-width:                      480px;
-	}
-	fieldset.content>.wrap.left
-	{
-		max-width:                      750px;
-	}
-
-		fieldset.content>.wrap.left .subheading
-		{
-			margin:                         0 0 2rem 0;
-			line-height:                    1.5rem;
-		}
-
-		fieldset.content>.wrap.left > section
-		{
-			border-bottom:                  1px solid #999;
-			margin-bottom:                  2rem;
-			padding:                        0 10px;
-		}
-
-		fieldset.content>.wrap.left .inputwrapper:nth-of-type(2n)
-		{
-			margin-right:                   0;
-		}
-
 	input,
 	textarea,
-	select
+	select,
+	fieldset
 	{
 		text-decoration:                none;
 		border:                         1px solid #ccc;
@@ -1241,9 +1372,30 @@
 		font:                           inherit;
 	}
 
+	fieldset
+	{
+		max-width:                      622px;
+		padding:                        9px;
+	}
+
+		fieldset > legend
+		{
+			line-height:                    1.5rem;
+			font:                           1.5rem/2rem 'Chau Philomene One', sans-serif;
+			color:                          #33cc99;
+			border:                         1px solid #ccc;
+			-webkit-box-shadow:             1px 4px 10px -6px #aaa;
+			-moz-box-shadow:                1px 4px 10px -6px #aaa;
+			box-shadow:                     1px 4px 10px -6px #aaa;
+			background-color:               #fff;
+			border-radius:                  5px;
+			padding:                        10px;
+		}
+
 		input
 		{
 			height:                         2rem;
+			width:                      275px;
 		}
 		select
 		{
@@ -1251,13 +1403,6 @@
 			padding-bottom:                 .5rem;
 			padding-right:                  0;
 			margin-bottom:                  0;
-		}
-
-		.two_columns > input,
-		.search > form > div > input
-		{
-			margin:                         0 20px 21px 0;
-			max-width:                      174px;
 		}
 
 		input[type='radio']
@@ -1284,6 +1429,7 @@
 		{
 			resize:                         none;
 			padding:                        .5rem;
+			width:                          590px;
 		}
 
 	.labelcomment
@@ -1310,45 +1456,44 @@
 	{
 		width:                         100%;
 		margin-bottom:                 2rem;
+		line-height:                    2.5rem;
+		text-align:                     left;
 	}
 
 	thead > tr > th
 	{
-		text-align:                     left;
-		font:                           1rem/2rem 'Droid Serif', serif;
 		font-weight:                    700;
-		padding:                        0 2rem;
-		border-bottom:                  1px solid #999;
+		padding:                        0 1rem 0 .5rem ;
+		background-color:               #f3f0ea;
 	}
-		.thead th:last-child
+		thead > tr > th:last-child
 		{
 			text-align:                     right;
 		}
 
-	.row > td
+	tbody > tr > td
 	{
-		text-align:                     left;
-		line-height:                    3rem;
+
 		background-color:               #f3f0ea;
-		padding:                        0 2rem;
-		border-bottom:                  1px solid #ccc;
+		padding:                        0 1rem 0 0;
+		padding:                        0 1rem 0 .5rem ;
 	}
 
-		.row >td:last-child
+		tbody > tr > td:last-child
 		{
 			text-align:                    right;
 		}
-		.row:last-child > td
+		tbody > tr:last-child > td
 		{
-			border-bottom:                  1px solid #999;
+			/*border-bottom:                  1px solid #999;*/
 		}
 
-		.row:nth-child(2n) > td
+		tbody > tr:nth-child(2n+1) > td
 		{
 			background-color:               transparent;
 		}
 
-		.row > td > input[type='number']
+		tbody > tr > td > input[type='number']
 		{
 			margin-right:                   1rem;
 		}

@@ -19,9 +19,8 @@
 		<xsl:param name="text"><xsl:value-of select="$href" /></xsl:param>
 		<xsl:param name="url_param">yesyeswhatever</xsl:param>
 
-		<li>
-			<a href="{$href}">
-				<xsl:if test="
+		<li class="item">
+			<xsl:if test="
 					/root/meta/action = $action and
 					(
 						(
@@ -31,8 +30,9 @@
 						$url_param = 'yesyeswhatever'
 					)
 				">
-					<xsl:attribute name="class">selected</xsl:attribute>
+					<xsl:attribute name="class">item active</xsl:attribute>
 				</xsl:if>
+			<a href="{$href}">
 				<xsl:value-of select="$text" />
 			</a>
 		</li>
@@ -61,8 +61,11 @@
 		<xsl:param name="rows" />
 		<xsl:param name="cols" />
 
-		<label for="{$id}">
-			<xsl:if test="$label"><xsl:value-of select="$label" /></xsl:if>
+		<div class="inputwrapper">
+		<!--label for="{$id}"-->
+			<xsl:if test="$label">
+				<label><xsl:value-of select="$label" /></label>
+			</xsl:if>
 			<xsl:if test="not($label) and not($type = 'submit')">
 				<xsl:value-of select="translate(substring($id, 1, 1), 'abcdefghijklmnopqrstuvwxyzåäö', 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ')" />
 				<xsl:value-of select="substring($id, 2)" />
@@ -238,9 +241,8 @@
 				</select>
 
 			</xsl:if>
-
-		</label>
-
+		<!--/label-->
+		</div>
 		<!-- Error message -->
 		<xsl:if test="$error != '' or ($error = '' and /root/content/errors/form_errors/*[local-name() = $id]/message)">
 			<p class="error">
@@ -269,21 +271,20 @@
 		<xsl:param name="id" />
 		<xsl:param name="name" />
 
-		<label>
-			<input type="submit" class="button" value="{$value}">
-				<xsl:if test="$id">
-					<xsl:attribute name="id"><xsl:value-of select="$id" /></xsl:attribute>
-					<xsl:attribute name="name">
-						<xsl:if test="$name = ''">
-							<xsl:value-of select="$id" />
-						</xsl:if>
-						<xsl:if test="$name != ''">
-							<xsl:value-of select="$name" />
-						</xsl:if>
-					</xsl:attribute>
-				</xsl:if>
-			</input>
-		</label>
+		<button class="longman positive">
+			<xsl:if test="$id">
+				<xsl:attribute name="id"><xsl:value-of select="$id" /></xsl:attribute>
+				<xsl:attribute name="name">
+					<xsl:if test="$name = ''">
+						<xsl:value-of select="$id" />
+					</xsl:if>
+					<xsl:if test="$name != ''">
+						<xsl:value-of select="$name" />
+					</xsl:if>
+				</xsl:attribute>
+			</xsl:if>
+			<xsl:value-of select="$value"/><xsl:text> ›</xsl:text>
+		</button>
 	</xsl:template>
 
 	<xsl:template name="input_field">

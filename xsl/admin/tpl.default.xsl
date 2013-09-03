@@ -84,9 +84,9 @@
 				</nav>
 				<div class="page_content left">
 					<xsl:call-template name="header" />
-						<!--h1><xsl:value-of select="$h1" /></h1-->
+						<!--h1><xsl:value-of select="$h1" /></h1--> <!-- <<< I have no idea what this is.. -->
 						<xsl:call-template name="tabs" />
-						<div class="content">
+						<!--div class="content"-->
 							<!-- Content start -->
 							<xsl:for-each select="/root/content/errors/error">
 								<div class="error"><xsl:value-of select="." /></div>
@@ -96,7 +96,7 @@
 							</xsl:for-each>
 							<xsl:apply-templates select="/root/content" />
 							<!-- Content end -->
-						</div>
+						<!--/div-->
 				</div>
 			</body>
 		</html>
