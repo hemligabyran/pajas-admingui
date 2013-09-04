@@ -1278,6 +1278,30 @@
 				padding-right:                  88px;
 			}
 
+/* #### PAGE         ############################################################ */
+
+	.loginbox
+	{
+		max-width:                      317px;
+		margin:                         10% auto 0;
+
+	}
+		.loginbox .wrap
+		{
+			max-width:                      275px;
+			height:                         auto;
+			min-height:                     0;
+			background-color:               #fff;
+			border:                         1px solid #000;
+			background-color:               #fff;
+			margin:                         1rem 0 0 0;
+			padding:                        20px;
+		}
+			.loginbox .wrap .inputwrapper
+			{
+		 		margin:                         0;
+			}
+
 /* #### FORMS        ############################################################ */
 
 	/*

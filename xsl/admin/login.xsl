@@ -12,48 +12,41 @@
 		<html>
 			<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<link type="text/css" href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" />
+				<link type="text/css" href="http://fonts.googleapis.com/css?family=Chau+Philomene+One" rel="stylesheet" />
+				<link type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 				<link type="text/css" href="../css/admin/style.css" rel="stylesheet" media="all" />
-				<link href='http://fonts.googleapis.com/css?family=Cuprum&amp;subset=latin' rel='stylesheet' type='text/css' />
 				<base href="http://{root/meta/domain}{/root/meta/base}admin/" />
 				<title>Admin - Login</title>
-				<!--[if lt IE 7]>
-					<style media="screen" type="text/css">
-						.contentwrap2
-						{
-							width: 100%;
-						}
-					</style>
-				<![endif]-->
 			</head>
 			<body>
-				<xsl:call-template name="header" />
-
-				<div class="thin center">
-					<div id="loginbox" class="message">
+				<!--xsl:call-template name="header" /-->
+				<div class="loginbox">
+					<div class="branding">
+						<h1 class="logo">Pajas</h1>
+					</div>
+					<div class="wrap clear">
 						<form method="post" action="login/do">
-							<fieldset>
-								<legend>Login</legend>
-								<xsl:if test="root/content/error">
-									<div class="message">
-										<xsl:value-of select="root/content/error" />
-									</div>
-								</xsl:if>
-								<div class="inputwrapper">
-									<td><label for="username">Username:</label></td>
-									<td><input type="text" name="username" id="username" /></td>
+							<xsl:if test="root/content/error">
+								<div class="message">
+									<xsl:value-of select="root/content/error" />
 								</div>
-								<div class="inputwrapper">
-									<label for="password">Password:</label>
-									<input type="password" name="password" />
-								</div>
-								<div class="controls">
-									<button value="Login" class="longman positive" >Login ›</button>
-								</div>
-							</fieldset>
+							</xsl:if>
+							<div class="inputwrapper">
+								<label for="username">Username:</label>
+								<input type="text" name="username" id="username" />
+							</div>
+							<div class="inputwrapper">
+								<label for="password">Password:</label>
+								<input type="password" name="password" />
+							</div>
+							<div class="controls clear">
+								<a class="stronglink left" href="#">Glömt lösenord? ›</a>
+								<button value="Login" class="longman positive" >Login ›</button>
+							</div>
 						</form>
 					</div>
 				</div>
-
 			</body>
 		</html>
 	</xsl:template>
