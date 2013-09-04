@@ -20,7 +20,6 @@
 				<title>Admin - Login</title>
 			</head>
 			<body>
-				<!--xsl:call-template name="header" /-->
 				<div class="loginbox">
 					<div class="branding">
 						<h1 class="logo">Pajas</h1>
