@@ -39,7 +39,7 @@
 								<label for="password">Password:</label>
 								<input type="password" name="password" />
 							</div>
-							<div class="controls clear">
+							<div class="controls">
 								<a class="stronglink left" href="#">Glömt lösenord? ›</a>
 								<button value="Login" class="longman positive" >Login ›</button>
 							</div>

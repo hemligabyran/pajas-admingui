@@ -83,19 +83,15 @@
 				</nav>
 				<div class="page_content left">
 					<xsl:call-template name="header" />
-						<!--h1><xsl:value-of select="$h1" /></h1--> <!-- <<< I have no idea what this is.. -->
-						<xsl:call-template name="tabs" />
-						<!--div class="content"-->
-							<!-- Content start -->
-							<xsl:for-each select="/root/content/errors/error">
-								<div class="error"><xsl:value-of select="." /></div>
-							</xsl:for-each>
-							<xsl:for-each select="/root/content/messages/message">
-								<div class="message"><xsl:value-of select="." /></div>
-							</xsl:for-each>
-							<xsl:apply-templates select="/root/content" />
-							<!-- Content end -->
-						<!--/div-->
+					<!--h1><xsl:value-of select="$h1" /></h1--> <!-- <<< I have no idea what this is.. -->
+					<xsl:call-template name="tabs" />
+					<xsl:for-each select="/root/content/errors/error">
+						<div class="error"><xsl:value-of select="." /></div>
+					</xsl:for-each>
+					<xsl:for-each select="/root/content/messages/message">
+						<div class="message"><xsl:value-of select="." /></div>
+					</xsl:for-each>
+					<xsl:apply-templates select="/root/content" />
 				</div>
 			</body>
 		</html>

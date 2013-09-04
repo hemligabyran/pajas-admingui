@@ -64,7 +64,7 @@
 		<xsl:choose>
 
 			<!-- Inputs of different types -->
-			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email'">
+			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel'">
 				<div class="inputwrapper">
 					<xsl:if test="/root/content/errors/error[@id = $id]">
 						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
@@ -277,7 +277,35 @@
 				<xsl:if test="/root/content/errors/error[@id = $id]">
 					<div class="error_box"><xsl:value-of select="/root/content/errors/error[@id = $id]" /></div>
 				</xsl:if>
+			</xsl:when>
 
+			<!-- Inputs of different types -->
+			<xsl:when test="$type = 'none'">
+				<div class="clear">
+
+					<!--xsl:call-template name="form_line_label">
+						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+					</xsl:call-template-->
+					<strong><xsl:value-of select="$label" /></strong>
+					<span><xsl:value-of select="$value" /></span>
+					<!--input type="{$type}" id="{$id}">
+
+						<xsl:if test="$disabled">
+							<xsl:attribute name="disabled">disabled</xsl:attribute>
+						</xsl:if>
+
+						<xsl:attribute name="name">
+							<xsl:if test="$name = ''">
+								<xsl:value-of select="$id" />
+							</xsl:if>
+							<xsl:if test="$name != ''">
+								<xsl:value-of select="$name" />
+							</xsl:if>
+						</xsl:attribute>
+					</input-->
+				</div>
 			</xsl:when>
 
 			<!-- Everything else -->
