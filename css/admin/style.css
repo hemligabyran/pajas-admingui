@@ -932,6 +932,7 @@
 	{
 		padding:                        0px;
 		border-bottom:                  1px solid #ccc;
+		height:                         60px;
 	}
 		.pageheader .heading
 		{
@@ -1292,13 +1293,13 @@
 
 	.loginbox
 	{
-		max-width:                      317px;
+		max-width:                      340px;
 		margin:                         10% auto 0;
 
 	}
 		.loginbox .wrap
 		{
-			max-width:                      275px;
+			/*max-width:                      275px;*/
 			height:                         auto;
 			min-height:                     0;
 			background-color:               #fff;
@@ -1310,6 +1311,7 @@
 			.loginbox .wrap .inputwrapper
 			{
 		 		margin:                         0;
+		 		float:                          none;
 			}
 
 /* #### FORMS #################################################################### */
@@ -1404,6 +1406,9 @@
 		margin-bottom:                  20px;
 		padding:                        .2rem 1rem;
 		font:                           inherit;
+		-webkit-box-sizing:             content-box;
+		-moz-box-sizing:                content-box;
+		box-sizing:                     content-box;
 	}
 
 	fieldset
@@ -1445,8 +1450,8 @@
 		}
 	input
 	{
-		height:                         2rem;
-		width:                          275px;
+		height:                           2.5rem;
+		min-width:                        275px;
 	}
 
 	.select_wrapper

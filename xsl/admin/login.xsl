@@ -24,7 +24,7 @@
 					<div class="branding">
 						<h1 class="logo">Pajas</h1>
 					</div>
-					<div class="wrap clear">
+					<div class="wrap">
 						<form method="post" action="login/do">
 							<xsl:if test="root/content/error">
 								<div class="message">
@@ -40,7 +40,7 @@
 								<input type="password" name="password" />
 							</div>
 							<div class="controls">
-								<a class="stronglink left" href="#">Glömt lösenord? ›</a>
+								<a class="stronglink" href="#">Glömt lösenord? ›</a>
 								<button value="Login" class="longman positive" >Login ›</button>
 							</div>
 						</form>
