@@ -1390,7 +1390,7 @@
 
 	input,
 	textarea,
-	select,
+	.select_wrapper,
 	fieldset
 	{
 		text-decoration:                none;
@@ -1446,14 +1446,33 @@
 	input
 	{
 		height:                         2rem;
-		width:                      275px;
+		width:                          275px;
 	}
-	select
+
+	.select_wrapper
 	{
+		height:                         3rem;
+		width:                          300px;
+		/*padding-top:                    .5rem;
+		padding-bottom:                 .5rem;
+		padding-right:                  0;
+		margin-bottom:                  0;*/
+		padding:                        0;
+		overflow:                       hidden;
+
+	}
+
+	.select_wrapper select
+	{
+		width:                          322px;
 		padding-top:                    .5rem;
 		padding-bottom:                 .5rem;
 		padding-right:                  0;
 		margin-bottom:                  0;
+		-webkit-appearance:             none;
+		appearance:                     none;
+		border:                         none;
+		background:                     transparent;
 	}
 
 	input[type='radio']
