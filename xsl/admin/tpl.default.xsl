@@ -118,21 +118,19 @@
 			<xsl:sort select="position" />
 			<xsl:if test="@category = $cat_name">
 				<li class="item">
+					<!-- these active thingies dont work and the "active" class should go on the li -->
 					<a href="{href}">
 						<xsl:if test="/root/meta/admin_page = name">
-							<xsl:attribute name="class">selected</xsl:attribute>
+							<!--xsl:attribute name="class">item active</xsl:attribute-->
 						</xsl:if>
 						<xsl:if test="not(/root/meta/admin_page) and href = ''">
-							<xsl:attribute name="class">selected</xsl:attribute>
+							<!--xsl:attribute name="class">item active</xsl:attribute-->
 						</xsl:if>
 						<xsl:value-of select="name" />
 					</a>
 				</li>
 			</xsl:if>
 		</xsl:for-each>
-			<li class="item active">
-				<a href="#">Aktiv</a>
-			</li>
 	</xsl:template>
 
 </xsl:stylesheet>

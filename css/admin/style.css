@@ -1483,6 +1483,20 @@
 		background:                     transparent;
 		line-height:                    2rem;
 	}
+		.select_wrapper select > option
+		{
+			width:                          122px;
+			padding-top:                    .5rem;
+			padding-bottom:                 .5rem;
+			padding-right:                  0;
+			margin-bottom:                  0;
+			padding-left:                   .5rem;
+			-webkit-appearance:             none;
+			appearance:                     none;
+			border:                         none;
+			background:                     transparent;
+			line-height:                    2rem;
+		}
 
 	input[type='radio']
 	{
@@ -1510,6 +1524,35 @@
 		padding:                        .5rem;
 		width:                          608px;
 	}
+
+	/** CSS3 override for checkbox and label **/
+	/** It works by making the label the clickable element and using ":checked" to flip the background sprite **/
+
+		/* Overrides for the star-clip checkbox */
+		input[type='checkbox']
+		{
+			display:                       none;
+		}
+		input[type='checkbox'] + .label
+		{
+			display:                       inline-block;
+			width:                         28px;
+			height:                        28px;
+			text-indent:                   -1337px;
+			overflow:                      hidden;
+			background:                    url('/img/common_objects_sprite.gif') no-repeat scroll 100% center transparent;
+			background-position:           7px  -330px;
+		}
+		input[type='checkbox']:checked + .label
+		{
+			display:                       inline-block;
+			width:                         28px;
+			height:                        28px;
+			text-indent:                   -1337px;
+			overflow:                      hidden;
+			background:                    url('/img/common_objects_sprite.gif') no-repeat scroll 100% center transparent;
+			background-position:           7px  -354px;
+		}
 
 	.labelcomment
 	{

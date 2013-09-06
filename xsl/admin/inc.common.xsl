@@ -72,7 +72,37 @@
 		<xsl:param name="cols" />
 
 		<xsl:choose>
+			<!-- Filefield -->
+			<xsl:when test="$type = 'file'">
+				<div class="inputwrapper">
+					<xsl:if test="/root/content/errors/error[@id = $id]">
+						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
+					</xsl:if>
 
+					<xsl:call-template name="form_line_label">
+						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+					</xsl:call-template>
+					<div class="fileupload_wrapper">
+						<input type="{$type}" id="{$id}">
+
+							<xsl:if test="$disabled">
+								<xsl:attribute name="disabled">disabled</xsl:attribute>
+							</xsl:if>
+
+							<xsl:attribute name="name">
+								<xsl:if test="$name = ''">
+									<xsl:value-of select="$id" />
+								</xsl:if>
+								<xsl:if test="$name != ''">
+									<xsl:value-of select="$name" />
+								</xsl:if>
+							</xsl:attribute>
+						</input>
+					</div>
+				</div>
+			</xsl:when>
 			<!-- Inputs of different types -->
 			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel'">
 				<div class="inputwrapper">
@@ -180,7 +210,7 @@
 
 			<!-- Checkboxes, radios -->
 			<xsl:when test="type = 'radio' or $type = 'checkbox'">
-				<div class="inputwrapper">
+				<div class="inputwrapper_checkbox">
 					<xsl:call-template name="form_line_label">
 						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
 						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
