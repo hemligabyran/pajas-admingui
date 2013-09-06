@@ -2,8 +2,18 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:template name="header">
+		<xsl:param name="site_name" />
+
 		<header class="pageheader clear">
-			<h1 class="heading left">ByggFrank Admin</h1>
+			<xsl:choose>
+				<xsl:when test="$site_name">
+					<h1 class="heading left"><xsl:value-of select="$site_name" /></h1>
+				</xsl:when>
+				<xsl:otherwise>
+					<h1 class="heading left">Admin</h1>
+				</xsl:otherwise>
+			</xsl:choose>
+
 			<div class="account right">
 				<xsl:if test="/root/meta/user_data">
 					<span class="left"><xsl:text>Logged in as: </xsl:text><xsl:value-of select="/root/meta/user_data/username" /></span><a class="left stronglink" href="logout">Logga ut ›</a>
