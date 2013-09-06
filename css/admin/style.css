@@ -80,8 +80,9 @@
 	.clear,
 	.pagewrap,
 	.article_footer,
-	article
-	fieldset
+	article,
+	fieldset,
+	.controls
 	{
 		clear:                          both;
 	}
@@ -95,7 +96,9 @@
 	article:after,
 	article:before
 	fieldset:after,
-	fieldset:before
+	fieldset:before,
+	.controls:after,
+	.controls:before
 	{
 		clear:                          both;
 		display:                        table;
@@ -186,11 +189,11 @@
 		border-radius:                  5px;
 		color:                          #fff;
 		font:                           inherit;
-		padding:                        .4rem 1rem;
+		padding:                        .5rem 1rem;
 		font-weight:                    700;
 		display:                        block;
 		box-shadow:                     none;
-		height:                         2.6rem;
+		height:                         3rem;
 		text-decoration:                none;
 		text-shadow:                    1px 1px rgba(0,0,0,.3);
 	}
@@ -279,36 +282,6 @@
 		{
 			margin-left:                     1rem;
 		}
-
-/* #### LOGIN #################################################################### */
-
-	.login_container
-	{
-		width:                          340px;
-		margin:                         10% auto 0 auto;
-	}
-
-		.login_container > form > fieldset
-		{
-			border:                         1px solid #000;
-			background:                     #fff;
-			border-radius:                  0;
-			box-shadow:                     0 0 40px 3px #000;
-			padding:                        20px;
-		}
-
-		.login_inputwrapper
-		{
-			float:                          left;
-			margin:                         0;
-		}
-
-			.login_inputwrapper > input
-			{
-				width:                          300px;
-				line-height:                    30px;
-				height:                         30px;
-			}
 
 /* #### MENUS #################################################################### */
 
@@ -509,7 +482,6 @@
 			{
 				color:                          #fff;
 			}
-
 /* #### RESPONSIVE OVERRIDES ##################################################### */
 
 	/*** NAVIGATION ( < 800px ) ***/
@@ -847,7 +819,12 @@
 	/***  Only non-specific page_content here! ***/
 	/*    Headers, footers and stuff that are on every page or are non-specific */
 
-
+	/*body > .wrap
+	{
+		width:                         72%;
+		background-color:              #fff;
+		min-height:                    100%;
+	}*/
 	/* Modals*/
 	.modal_block
 	{
@@ -955,6 +932,7 @@
 	{
 		padding:                        0px;
 		border-bottom:                  1px solid #ccc;
+		height:                         60px;
 	}
 		.pageheader .heading
 		{
@@ -1311,6 +1289,31 @@
 				padding-right:                  88px;
 			}
 
+/* #### PAGE ##################################################################### */
+
+	.loginbox
+	{
+		max-width:                      340px;
+		margin:                         10% auto 0;
+
+	}
+		.loginbox .wrap
+		{
+			/*max-width:                      275px;*/
+			height:                         auto;
+			min-height:                     0;
+			background-color:               #fff;
+			border:                         1px solid #000;
+			background-color:               #fff;
+			margin:                         1rem 0 0 0;
+			padding:                        20px;
+		}
+			.loginbox .wrap .inputwrapper
+			{
+		 		margin:                         0;
+		 		float:                          none;
+			}
+
 /* #### FORMS #################################################################### */
 
 	/*
@@ -1340,16 +1343,17 @@
 			color:                          #fff;
 		}
 
-	.inputwrapper
+	fieldset > .inputwrapper
 	{
-		margin-right:                   18px;
+		/*margin-right:                   18px;*/
+		margin:                         0 4.5px;
 		float:                          left;
 	}
-		.inputwrapper:nth-child(2n)
+		/*.inputwrapper:nth-child(2n)
 		{
 			margin-right:                   0;
-			float:                          right;
-		}
+		}*/
+
 	.textfield
 	{
 		width:                          590px;
@@ -1389,7 +1393,7 @@
 
 	input,
 	textarea,
-	select,
+	.select_wrapper,
 	fieldset
 	{
 		text-decoration:                none;
@@ -1403,6 +1407,9 @@
 		margin-bottom:                  20px;
 		padding:                        .2rem 1rem;
 		font:                           inherit;
+		-webkit-box-sizing:             content-box;
+		-moz-box-sizing:                content-box;
+		box-sizing:                     content-box;
 	}
 
 	fieldset
@@ -1425,45 +1432,81 @@
 			padding:                        10px;
 		}
 
-		input
+	fieldset > fieldset
+	{
+		width:                          100%;
+		padding:                        0;
+		margin:                         0;
+		border:                         none;
+		box-shadow:                     none;
+	}
+		fieldset > fieldset > legend
 		{
-			height:                         2rem;
-			width:                      275px;
-		}
-		select
-		{
-			padding-top:                    .5rem;
-			padding-bottom:                 .5rem;
-			padding-right:                  0;
-			margin-bottom:                  0;
-		}
-
-		input[type='radio']
-		{
-			margin:                         0;
-			border:                         none;
-			-webkit-box-shadow:             none;
-			-moz-box-shadow:                none;
+			font:                           inherit;
 			box-shadow:                     none;
-			float:                          left;
-			margin-right:                   1rem;
+			border:                         none;
+			font-weight:                    700;
+			color:                          #000;
+			padding:                        0;
+		}
+	input
+	{
+		height:                           2.5rem;
+		min-width:                        275px;
+	}
 
-		}
-		input[type='number']
-		{
-			margin:                         0;
-			padding-top:                    0;
-			padding-bottom:                 0;
-			max-width:                      3rem;
-			line-height:                    2rem;
-		}
+	.select_wrapper
+	{
+		height:                         3rem;
+		width:                          300px;
+		/*padding-top:                    .5rem;
+		padding-bottom:                 .5rem;
+		padding-right:                  0;
+		margin-bottom:                  0;*/
+		padding:                        0;
+		overflow:                       hidden;
 
-		textarea
-		{
-			resize:                         none;
-			padding:                        .5rem;
-			width:                          590px;
-		}
+	}
+
+	.select_wrapper select
+	{
+		width:                          322px;
+		padding-top:                    .5rem;
+		padding-bottom:                 .5rem;
+		padding-right:                  0;
+		margin-bottom:                  0;
+		-webkit-appearance:             none;
+		appearance:                     none;
+		border:                         none;
+		background:                     transparent;
+	}
+
+	input[type='radio']
+	{
+		margin:                         0;
+		border:                         none;
+		-webkit-box-shadow:             none;
+		-moz-box-shadow:                none;
+		box-shadow:                     none;
+		float:                          left;
+		margin-right:                   1rem;
+
+	}
+	input[type='number']
+	{
+		margin:                         0;
+		padding-top:                    0;
+		padding-bottom:                 0;
+		max-width:                      3rem;
+		line-height:                    2rem;
+	}
+
+	textarea
+	{
+		resize:                         none;
+		padding:                        .5rem;
+		width:                          608px;
+	}
 
 	.labelcomment
 	{
