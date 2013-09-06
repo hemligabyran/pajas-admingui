@@ -1465,7 +1465,8 @@
 		margin-bottom:                  0;*/
 		padding:                        0;
 		overflow:                       hidden;
-
+		background:                     url('../../../img/admin/sprites.png') no-repeat;
+		background-position:            280px -265px;
 	}
 
 	.select_wrapper select
@@ -1475,10 +1476,12 @@
 		padding-bottom:                 .5rem;
 		padding-right:                  0;
 		margin-bottom:                  0;
+		padding-left:                   .5rem;
 		-webkit-appearance:             none;
 		appearance:                     none;
 		border:                         none;
 		background:                     transparent;
+		line-height:                    2rem;
 	}
 
 	input[type='radio']
