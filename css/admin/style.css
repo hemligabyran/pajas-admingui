@@ -1531,7 +1531,7 @@
 		/* Overrides for the star-clip checkbox */
 		input[type='checkbox']
 		{
-			display:                       none;
+			/*display:                       none;*/
 		}
 		input[type='checkbox'] + .label
 		{
@@ -1601,10 +1601,12 @@
 		padding:                        0 1rem 0 .5rem ;
 	}
 
-		tbody > tr > td:last-child
+		tbody > tr > td:last-child,
+		tbody > tr > th:last-child
 		{
 			text-align:                    right;
 		}
+
 		tbody > tr:last-child > td
 		{
 			/*border-bottom:                  1px solid #999;*/
