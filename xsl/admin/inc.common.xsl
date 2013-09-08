@@ -104,6 +104,7 @@
 					</div>
 				</div>
 			</xsl:when>
+
 			<!-- Inputs of different types -->
 			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel' or $type = 'time'">
 				<div class="inputwrapper">
@@ -266,7 +267,13 @@
 					<xsl:if test="/root/content/errors/error[@id = $id]">
 						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
 					</xsl:if>
-					<!-- Label should go here? -->
+
+					<xsl:call-template name="form_line_label">
+						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+					</xsl:call-template>
+
 					<div class="select_wrapper">
 						<select id="{$id}">
 
