@@ -212,11 +212,6 @@
 			<!-- Checkboxes, radios -->
 			<xsl:when test="type = 'radio' or $type = 'checkbox'">
 				<div class="inputwrapper_checkbox">
-					<xsl:call-template name="form_line_label">
-						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
-						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
-					</xsl:call-template>
 
 					<input type="{$type}" id="{$id}" value="{$value}">
 						<xsl:if test="$disabled">
@@ -252,6 +247,11 @@
 							<xsl:attribute name="checked">checked</xsl:attribute>
 						</xsl:if>
 					</input>
+					<xsl:call-template name="form_line_label">
+						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+					</xsl:call-template>
 				</div>
 
 				<xsl:if test="/root/content/errors/error[@id = $id]">

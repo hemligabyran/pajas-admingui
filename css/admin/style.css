@@ -1353,6 +1353,10 @@
 		{
 			margin-right:                   0;
 		}*/
+		/*fieldset > .inputwrapper:nth-child(2n)
+		{
+			clear:                          left;
+		}*/
 
 	.textfield
 	{
@@ -1403,14 +1407,14 @@
 	.inputwrapper_checkbox
 	{
 		margin-left:                    4.5px;
-		width:                          130px;
-		float:                          left;
 		clear:                          both;
+		height:                         2.5rem;
+		min-width:                      275px;
 	}
 
 	.inputwrapper_checkbox > input
 	{
-		float:                          right;
+		float:                          left;
 		margin-top:                     5px;
 		height:                         auto;
 		width:                          auto;
@@ -1428,6 +1432,7 @@
 		.inputwrapper_checkbox > label
 		{
 			float:                          left;
+			clear:                          none;
 		}
 	fieldset
 	{
@@ -1597,6 +1602,7 @@
 		margin-bottom:                 2rem;
 		line-height:                    2.5rem;
 		text-align:                     left;
+
 	}
 
 	thead > tr > th
@@ -1604,6 +1610,7 @@
 		font-weight:                    700;
 		padding:                        0 1rem 0 .5rem ;
 		background-color:               #f3f0ea;
+		white-space:                    nowrap;
 	}
 		thead > tr > th:last-child
 		{
@@ -1616,6 +1623,7 @@
 		background-color:               #f3f0ea;
 		padding:                        0 1rem 0 0;
 		padding:                        0 1rem 0 .5rem ;
+		white-space:                    nowrap;
 	}
 
 		tbody > tr > td:last-child,
