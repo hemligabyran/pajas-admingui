@@ -52,6 +52,7 @@
 		<xsl:param name="id" /><!-- This should always be set -->
 		<xsl:param name="name" />
 		<xsl:param name="value" />
+		<xsl:param name="checked">0</xsl:param>
 		<xsl:param name="label" />
 
 		<!-- This -->
@@ -217,7 +218,7 @@
 						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
 					</xsl:call-template>
 
-					<input type="{$type}" id="{$id}">
+					<input type="{$type}" id="{$id}" value="{$value}">
 						<xsl:if test="$disabled">
 							<xsl:attribute name="disabled">disabled</xsl:attribute>
 						</xsl:if>
@@ -242,7 +243,7 @@
 								/root/content/formdata/field[@id = $id] != '0'
 							)
 							or
-							$value != '0'
+							$checked != '0'
 						">
 							<xsl:attribute name="checked">checked</xsl:attribute>
 						</xsl:if>
