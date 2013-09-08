@@ -236,9 +236,13 @@
 						</xsl:attribute>
 
 						<xsl:if test="
-							$type = 'checkbox' and
-							/root/content/formdata/field[@id = $id] and
-							/root/content/formdata/field[@id = $id] != '0'
+							(
+								$type = 'checkbox' and
+								/root/content/formdata/field[@id = $id] and
+								/root/content/formdata/field[@id = $id] != '0'
+							)
+							or
+							$value != '0'
 						">
 							<xsl:attribute name="checked">checked</xsl:attribute>
 						</xsl:if>
