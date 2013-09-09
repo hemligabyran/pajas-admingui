@@ -98,7 +98,7 @@
 					<!--div class="content"-->
 						<!-- Content start -->
 						<xsl:for-each select="/root/content/errors/error">
-							<div class="error"><xsl:value-of select="." /></div>
+							<div class="message error"><xsl:value-of select="." /></div>
 						</xsl:for-each>
 						<xsl:for-each select="/root/content/messages/message">
 							<div class="message"><xsl:value-of select="." /></div>
