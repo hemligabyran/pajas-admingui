@@ -106,7 +106,7 @@
 			</xsl:when>
 
 			<!-- Inputs of different types -->
-			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel' or $type = 'time'">
+			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel' or $type = 'time' or $type = 'date'">
 				<div class="inputwrapper">
 					<xsl:if test="/root/content/errors/error[@id = $id]">
 						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
