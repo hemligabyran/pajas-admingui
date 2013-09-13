@@ -71,7 +71,6 @@
 		font-weight:                    400;
 	}
 
-	/* Full size background on body..*/
 	body
 	{
 		background:                     url('../../img/admin/bg_tile.gif');
@@ -486,333 +485,19 @@
 
 	/*** NAVIGATION ( < 800px ) ***/
 
-		@media screen and (max-width: 800px)
+		@media screen and (max-width: 1320px)
 		{ .foo{} /*this is here for your viewing pleasure*/
 
-			.nav
-			{
-				min-height:                     20px;
-			}
+		.page_content
+		{
+			min-height:                     100%;
+			background-color:               #fff;
+			padding:                        30px 20px;
+			max-width:                      700px !important;
+			/*float:                          right;*/
+		}
 
-				.nav .list
-				{
-					width:                          180px;
-					border:                         3px solid #aaa;
-					background-color:               #7b1323;
-					border-radius:                  3px;
-					float:                          left;
-				}
-
-				.nav .item
-				{
-					display:                        none;
-					margin:                         0;
-				}
-
-					.nav .item.active
-					{
-						display:                        block;
-					}
-
-				.nav .item > a
-				{
-					display:                        block;
-					padding:                        5px 5px 5px 32px;
-					text-align:                     left;
-					font-size:                      1.2rem;
-				}
-
-				.nav .item.active > a
-				{
-					background:                     none;
-					color:                          #fff;
-				}
-
-					.nav .list:hover .item
-					{
-						display:                            block;
-					}
-
-					.nav .list:hover .item:hover
-					{
-						background-color:                   #000;
-					}
-
-					.nav .list:hover .active
-					{
-						/*background-color:                   #ff0;*/
-					}
 		} /* media screen end*/
-
-	/*** SEARCH PAGE ( < 1000px ) ***/
-
-		@media screen and (max-width: 1000px)
-		{.foo{} /*this is here for your viewing pleasure*/
-
-			/*.figures
-			{
-				float:                          left;
-				width:                          auto !important;
-				padding:                        0;
-				margin:                         20px 0 0;
-			}
-				.figures > figure
-				{
-					float:                          left;
-					margin-right:                   2rem;
-				}*/
-		}
-
-	/*** SEARCH PAGE ( < 800px ) ***/
-
-		@media screen and (max-width: 800px)
-		{.foo{} /*this is here for your viewing pleasure*/
-
-			/*
-			.branding
-			{
-				display:                       none;
-			}
-			.pageheader
-			{
-				margin-left:                    240px;
-			}
-			.pagewrap
-			{
-				margin-left:                    240px;
-				padding-top:                    0px !important;
-
-			}
-			.page_content.max
-			{
-				width:                          503px !important;
-				padding:                        1rem  !important;
-
-			}
-			.pagefooter
-			{
-				display:                        none;
-			}
-
-			.search_results
-			{
-				margin:                        0 !important;
-			}
-			.restaurants
-			{
-				position:                       absolute;
-				top:                            0;
-				left:                           0;
-				clear:                          both;
-				background-color:               rgba(0,0,0,.6);
-				width:                          241px !important;
-				color:                          #fff !important;
-				padding-top:                    50px;
-				height:                         100%;
-			}
-
-			.restaurants .menuheading
-			{
-				margin:                         0 0;
-				font-weight:                    700;
-				font-size:                      1.2rem;
-				background-color:               #fff;
-				color:                          #000;
-			}
-
-			.restaurants .menu .item
-			{
-				color:                          #fff;
-				font-size:                      1.2rem;
-			}
-
-				.restaurants .menu .item:hover
-				{
-
-					color:                          #fff;
-					background-color:               #7b1323;
-
-				}
-
-				.restaurants .menu .item.active
-				{
-					color:                          #7b1323;
-					background:                     url('/img/elements.png') no-repeat;
-					background-position:            3px -34px;
-					margin-left:                    -6px;
-					padding-left:                   6px;
-				}
-
-				.restaurants .menu .item > a
-				{
-					padding:                        0 0 0 3rem;
-					font-weight:                    400;
-					text-decoration:                none;
-					color:                          inherit;
-					display:                        block;
-				}
-				*/
-		}
-
-	/*** IPHONE ignore this - its just testing around ********************/
-
-		@media screen and (max-device-width: 800px)
-		{ .foo{} /*this is here for your viewing pleasure*/
-
-			/*
-			.nav
-			{
-				min-height:                     20px;
-			}
-
-				.nav .list
-				{
-					width:                          180px;
-					border:                         3px solid #aaa;
-					background-color:               #7b1323;
-					border-radius:                  3px;
-					float:                          left;
-				}
-
-				.nav .item
-				{
-					display:                        none;
-					margin:                         0;
-				}
-
-					.nav .item.active
-					{
-						display:                        block;
-					}
-
-				.nav .item > a
-				{
-					display:                        block;
-					padding:                        5px 5px 5px 32px;
-					text-align:                     left;
-					font-size:                      1.2rem;
-				}
-
-				.nav .item.active > a
-				{
-					background:                     none;
-					color:                          #fff;
-				}
-
-					.nav .list:hover .item
-					{
-						display:                            block;
-					}
-
-					.nav .list:hover .item:hover
-					{
-						background-color:                   #000;
-					}
-
-					.nav .list:hover .active
-					{
-
-					}
-
-			.figures
-			{
-				float:                          left;
-				width:                          auto !important;
-				padding:                        0;
-				margin:                         20px 0 0;
-			}
-				.figures > figure
-				{
-					float:                          left;
-					margin-right:                   2rem;
-				}
-
-			body
-			{
-				zoom:  1.5;
-
-			}
-			.branding
-			{
-				display:                       none;
-			}
-			.pageheader
-			{
-				margin-left:                    240px;
-			}
-			.pagewrap
-			{
-				margin-left:                    240px;
-				padding-top:                    0px !important;
-
-			}
-			.page_content.max
-			{
-				width:                          503px !important;
-				padding:                        1rem  !important;
-
-			}
-			.pagefooter
-			{
-				display:                        none;
-			}
-
-			.search_results
-			{
-				margin:                        0 !important;
-			}
-			.restaurants
-			{
-				position:                       absolute;
-				top:                            0;
-				left:                           0;
-				clear:                          both;
-				background-color:               rgba(0,0,0,.6);
-				width:                          241px !important;
-				color:                          #fff !important;
-				padding-top:                    50px;
-			}
-
-			.restaurants .menuheading
-			{
-				margin:                         0 0;
-				font-weight:                    700;
-				font-size:                      1.2rem;
-				background-color:               #fff;
-				color:                          #000;
-			}
-
-			.restaurants .menu .item
-			{
-				color:                          #fff;
-				font-size:                      1.2rem;
-			}
-
-				.restaurants .menu .item:hover
-				{
-
-					color:                          #fff;
-					background-color:               #7b1323;
-				}
-
-				.restaurants .menu .item.active
-				{
-					color:                          #7b1323;
-					background:                     url('/img/elements.png') no-repeat;
-					background-position:            3px -34px;
-					margin-left:                    -6px;
-					padding-left:                   6px;
-				}
-
-				.restaurants .menu .item > a
-				{
-					padding:                        0 0 0 3rem;
-					font-weight:                    400;
-					text-decoration:                none;
-					color:                          inherit;
-					display:                        block;
-				}*/
-		}
 
 /* #### PAGE (NON-SPECIFIC) ###################################################### */
 
@@ -1017,7 +702,7 @@
 
 	.main_nav
 	{
-		height:                         100%;
+		min-height:                         100%;
 		margin-top:                     30px;
 		min-width:                      199px;
 		border-right:                   1px solid #000;
@@ -1605,8 +1290,8 @@
 
 	table
 	{
-		width:                         100%;
-		margin-bottom:                 2rem;
+		width:                          622px;
+		margin-bottom:                  2rem;
 		line-height:                    2.5rem;
 		text-align:                     left;
 
@@ -1628,9 +1313,9 @@
 	{
 
 		background-color:               #f3f0ea;
-		padding:                        0 1rem 0 0;
-		padding:                        0 1rem 0 .5rem ;
-		white-space:                    nowrap;
+		padding:                        .5rem 1rem .5rem .5rem ;
+		vertical-align:                 top;
+		line-height:                    16px;
 	}
 
 		tbody > tr > td:last-child,
