@@ -115,12 +115,12 @@
 					<xsl:call-template name="form_line_label">
 						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
 						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+						<xsl:with-param name="id"><xsl:value-of select="$id" /></xsl:with-param>
 					</xsl:call-template>
 
 					<input type="{$type}" id="{$id}">
 
-						<xsl:if test="$disabled">
+						<xsl:if test="$disabled = 'true'">
 							<xsl:attribute name="disabled">disabled</xsl:attribute>
 						</xsl:if>
 
@@ -413,6 +413,7 @@
 		<xsl:param name="value" />
 		<xsl:param name="id" />
 		<xsl:param name="name" />
+		<xsl:param name="disabled" />
 
 		<button class="longman positive">
 			<xsl:if test="$id">
@@ -425,6 +426,9 @@
 						<xsl:value-of select="$name" />
 					</xsl:if>
 				</xsl:attribute>
+			</xsl:if>
+			<xsl:if test="$disabled">
+				<xsl:attribute name="disabled">disabled</xsl:attribute>
 			</xsl:if>
 			<xsl:value-of select="$value"/><xsl:text> ›</xsl:text>
 		</button>
