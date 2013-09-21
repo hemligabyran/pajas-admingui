@@ -73,6 +73,7 @@
 
 	body
 	{
+		/*background-color:               #fff;*/
 		background:                     url('../../img/admin/bg_tile.gif');
 	}
 
@@ -257,8 +258,6 @@
 			background:                     #f77e41;
 		}
 
-
-
 	/*** stronglink ***/
 	/*   This is the specialzied link
 	     in longmans designs
@@ -281,6 +280,11 @@
 		{
 			margin-left:                     1rem;
 		}
+
+	.rightalign
+	{
+		text-align:                      right;
+	}
 
 /* #### MENUS #################################################################### */
 
@@ -485,17 +489,17 @@
 
 	/*** NAVIGATION ( < 800px ) ***/
 
-		@media screen and (max-width: 1320px)
+		/*@media screen and (max-width: 1320px)
 		{ .foo{} /*this is here for your viewing pleasure*/
 
-		.page_content
+		/*.page_content
 		{
 			min-height:                     100%;
 			background-color:               #fff;
-			padding:                        30px 20px;
-			max-width:                      700px !important;
+			padding:                        30px 20px 0 200px;
+			/*max-width:                      700px !important;*/
 			/*float:                          right;*/
-		}
+	/*	}
 
 		} /* media screen end*/
 
@@ -690,23 +694,28 @@
 	{
 		min-height:                     100%;
 		background-color:               #fff;
-		padding:                        30px 20px;
-		max-width:                      80%;
+		padding:                        30px 30px ;/*0px 0 260px;*/
+		margin-left:                    230px;
+		/*max-width:                      80%;*/
 	}
 
 		.page_content > form,
 		.page_content > .module
 		{
 			float:                          left;
-			margin-right:                   20px;
+			margin-right:                   0;
 		}
 
 	.main_nav
 	{
-		min-height:                         100%;
-		margin-top:                     30px;
-		min-width:                      199px;
+		min-height:                     100%;
+		margin:                         0;
+		padding:                        30px 0 30px 30px;
+		width:                          199px;
 		border-right:                   1px solid #000;
+		position:                       absolute;
+		float:                          none;
+
 	}
 		.main_nav .item
 		{
@@ -1290,6 +1299,12 @@
 	.maxwide
 	{
 		width:                          auto;
+	}
+
+	h2
+	{
+		font-weight:                    bold;
+		margin-top:                     20px;
 	}
 
 /* #### TABLES ################################################################### */

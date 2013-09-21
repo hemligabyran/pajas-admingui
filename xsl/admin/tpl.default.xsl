@@ -61,7 +61,7 @@
 				<![endif]-->
 			</head>
 			<body>
-				<nav class="main_nav nav left" role="navigation">
+				<nav class="main_nav nav" role="navigation">
 					<h1 class="branding"><a class="logo" href="#">Pajas</a></h1>
 					<xsl:for-each select="/root/content/menuoptions/menuoption">
 						<xsl:sort select="@category" />
