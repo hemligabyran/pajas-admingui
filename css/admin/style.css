@@ -258,6 +258,27 @@
 			background:                     #f77e41;
 		}
 
+	button.inline
+	{
+		display:                        inline;
+		color:                          #444;
+		padding:                        3px;
+		margin-right:                   5px;
+		margin-left:                    5px;
+		border:                         2px outset;
+	}
+
+		button.inline:active
+		{
+			border-style: inset;
+		}
+
+		button.inline[disabled=disabled],
+		button.inline:disabled
+		{
+			color:                          #888;
+		}
+
 	/*** stronglink ***/
 	/*   This is the specialzied link
 	     in longmans designs
@@ -703,7 +724,7 @@
 		.page_content > .module
 		{
 			float:                          left;
-			margin-right:                   0;
+			margin-right:                   10px;
 		}
 
 	.main_nav
