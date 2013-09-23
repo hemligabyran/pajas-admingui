@@ -334,6 +334,22 @@
 				</xsl:if>
 			</xsl:when>
 
+			<!-- Date time local -->
+			<xsl:when test="$type = 'number'">
+				<!--div class="inputwrapper"-->
+					<label><xsl:value-of select="$label" /></label>
+					<input type="number" id="{$id}" name="{$name}" value="{$value}" style="border: none;" />
+				<!--/div-->
+			</xsl:when>
+
+			<!-- Date time local -->
+			<xsl:when test="$type = 'datetime-local'">
+				<div class="inputwrapper">
+					<label><xsl:value-of select="$label" /></label>
+					<input class="datetime" type="datetime-local" id="{$id}" name="{$name}" value="{$value}" style="border: none;" />
+				</div>
+			</xsl:when>
+
 			<!-- Plain text, no input -->
 			<xsl:when test="$type = 'none'">
 				<div class="inputwrapper">

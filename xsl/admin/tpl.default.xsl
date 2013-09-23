@@ -32,10 +32,16 @@
 				<base href="http://{root/meta/domain}{/root/meta/base}admin/" />
 
 				<!-- jQuery -->
-				<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js" />
+				<!--script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js" />
 				<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
-				<link type="text/css" rel="stylesheet" media="all" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+				<link type="text/css" rel="stylesheet" media="all" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" /-->
 
+				<script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+				<script type="text/javascript" src="//code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+				<script type="text/javascript" src="{/root/meta/base}js/admin/jquery-ui-timepicker-addon.js"></script>
+				<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+
+				<script type="text/javascript" src="{/root/meta/base}js/admin/main.js"></script>
 				<!-- Custom CSS files -->
 				<xsl:if test="$css_files">
 					<xsl:for-each select="$css_files/file">
