@@ -1159,7 +1159,7 @@
 		}
 	fieldset
 	{
-		max-width:                      622px;
+		max-width:                      422px;
 		padding:                        9px;
 	}
 
@@ -1197,7 +1197,7 @@
 	input
 	{
 		height:                           2.5rem;
-		min-width:                        275px;
+		min-width:                        175px;
 	}
 
 	.select_wrapper
