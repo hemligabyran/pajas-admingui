@@ -338,7 +338,16 @@
 			<xsl:when test="$type = 'number'">
 				<!--div class="inputwrapper"-->
 					<label><xsl:value-of select="$label" /></label>
-					<input type="number" id="{$id}" name="{$name}" value="{$value}" style="border: none;" />
+					<input type="number" id="{$id}" name="{$name}" value="{$value}" style="border: none;">
+						<xsl:attribute name="name">
+							<xsl:if test="$name = ''">
+								<xsl:value-of select="$id" />
+							</xsl:if>
+							<xsl:if test="$name != ''">
+								<xsl:value-of select="$name" />
+							</xsl:if>
+						</xsl:attribute>
+					</input>
 				<!--/div-->
 			</xsl:when>
 
@@ -346,7 +355,16 @@
 			<xsl:when test="$type = 'datetime-local'">
 				<div class="inputwrapper">
 					<label><xsl:value-of select="$label" /></label>
-					<input class="datetime" type="datetime-local" id="{$id}" name="{$name}" value="{$value}" style="border: none;" />
+					<input class="datetime" type="datetime-local" id="{$id}" name="{$name}" value="{$value}" style="border: none;">
+						<xsl:attribute name="name">
+							<xsl:if test="$name = ''">
+								<xsl:value-of select="$id" />
+							</xsl:if>
+							<xsl:if test="$name != ''">
+								<xsl:value-of select="$name" />
+							</xsl:if>
+						</xsl:attribute>
+					</input>
 				</div>
 			</xsl:when>
 
@@ -370,7 +388,7 @@
 						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
 						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
 					</xsl:call-template>
-					Type:<xsl:value-of select="$type" />
+					<xsl:text>Type: </xsl:text><xsl:value-of select="$type" />
 				</div>
 
 				<xsl:if test="/root/content/errors/error[@id = $id]">
