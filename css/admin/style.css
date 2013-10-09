@@ -1240,7 +1240,7 @@
 	.select_wrapper
 	{
 		height:                         3rem;
-		width:                          175px; /*300px*/
+		width:                          200px; /*300px*/
 		/*padding-top:                    .5rem;
 		padding-bottom:                 .5rem;
 		padding-right:                  0;
@@ -1248,12 +1248,12 @@
 		padding:                        0;
 		overflow:                       hidden;
 		background:                     url('../../../img/admin/sprites.png') no-repeat;
-		background-position:            150px -265px;
+		background-position:            180px -265px;
 	}
 
 	.select_wrapper select
 	{
-		width:                          182px;
+		width:                          200px;
 		padding-top:                    .5rem;
 		padding-bottom:                 .5rem;
 		padding-right:                  0;

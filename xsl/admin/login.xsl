@@ -41,7 +41,7 @@
 							</div>
 							<div class="controls">
 								<a class="stronglink" href="#">Glömt lösenord? ›</a>
-								<button value="Login" class="longman positive" >Login ›</button>
+								<button type="submit" value="Login" class="longman positive" >Login ›</button>
 							</div>
 						</form>
 					</div>
