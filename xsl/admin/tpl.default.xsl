@@ -69,7 +69,7 @@
 			</head>
 			<body>
 				<nav class="main_nav nav" role="navigation">
-					<h1 class="branding"><a class="logo" href="#">Pajas</a></h1>
+					<h1 class="branding"><a class="logo" href="/">Pajas</a></h1>
 					<xsl:for-each select="/root/content/menuoptions/menuoption">
 						<xsl:sort select="@category" />
 						<xsl:if test="generate-id() = generate-id(key('nav_categories',@category))">

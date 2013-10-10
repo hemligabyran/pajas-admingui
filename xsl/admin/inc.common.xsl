@@ -36,7 +36,7 @@
 						(
 							$url_param = '' and not(/root/meta/url_params/*)
 						) or
-						/root/meta/url_params[local-name() = $url_param] or
+						/root/meta/url_params/*[local-name() = $url_param] or
 						$url_param = 'yesyeswhatever'
 					)
 				">
