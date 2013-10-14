@@ -105,6 +105,80 @@
 				</div>
 			</xsl:when>
 
+			<!-- Select lists -->
+			<xsl:when test="$options or ($option_ids and $option_values)">
+
+				<div class="inputwrapper">
+					<xsl:if test="/root/content/errors/error[@id = $id]">
+						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
+					</xsl:if>
+
+					<xsl:call-template name="form_line_label">
+						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+					</xsl:call-template>
+
+					<div class="select_wrapper">
+						<select id="{$id}">
+
+							<xsl:if test="$disabled">
+								<xsl:attribute name="disabled">disabled</xsl:attribute>
+							</xsl:if>
+
+							<xsl:attribute name="name">
+								<xsl:if test="$name = ''">
+									<xsl:value-of select="$id" />
+								</xsl:if>
+								<xsl:if test="$name != ''">
+									<xsl:value-of select="$name" />
+								</xsl:if>
+							</xsl:attribute>
+
+							<xsl:if test="$options">
+								<xsl:for-each select="$options/option">
+									<xsl:sort select="@sorting" />
+
+									<option value="{@value}">
+
+										<xsl:if test="($value != '' and $value = @value) or ($value = '' and @value = /root/content/formdata/field[@id = $id])">
+											<xsl:attribute name="selected">selected</xsl:attribute>
+										</xsl:if>
+
+										<xsl:value-of select="." />
+
+									</option>
+
+								</xsl:for-each>
+
+							</xsl:if>
+
+							<xsl:if test="$option_ids and $option_values">
+
+								<xsl:for-each select="$option_ids">
+									<option value="{.}">
+
+										<xsl:if test="($value != '' and $value = .) or ($value = '' and . = /root/content/formdata/field[@id = $id])">
+											<xsl:attribute name="selected">selected</xsl:attribute>
+										</xsl:if>
+
+										<xsl:call-template name="form_line_option">
+											<xsl:with-param name="position" select="position()" />
+											<xsl:with-param name="option_values" select="$option_values" />
+										</xsl:call-template>
+									</option>
+								</xsl:for-each>
+
+							</xsl:if>
+
+						</select>
+					</div>
+				</div>
+				<xsl:if test="/root/content/errors/error[@id = $id]">
+					<div class="error_box"><xsl:value-of select="/root/content/errors/error[@id = $id]" /></div>
+				</xsl:if>
+			</xsl:when>
+
 			<!-- Inputs of different types -->
 			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel' or $type = 'time' or $type = 'date'">
 				<div class="inputwrapper">
@@ -255,80 +329,6 @@
 					</xsl:call-template>
 				</div>
 
-				<xsl:if test="/root/content/errors/error[@id = $id]">
-					<div class="error_box"><xsl:value-of select="/root/content/errors/error[@id = $id]" /></div>
-				</xsl:if>
-			</xsl:when>
-
-			<!-- Select lists -->
-			<xsl:when test="$options or ($option_ids and $option_values)">
-
-				<div class="inputwrapper">
-					<xsl:if test="/root/content/errors/error[@id = $id]">
-						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
-					</xsl:if>
-
-					<xsl:call-template name="form_line_label">
-						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
-						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
-					</xsl:call-template>
-
-					<div class="select_wrapper">
-						<select id="{$id}">
-
-							<xsl:if test="$disabled">
-								<xsl:attribute name="disabled">disabled</xsl:attribute>
-							</xsl:if>
-
-							<xsl:attribute name="name">
-								<xsl:if test="$name = ''">
-									<xsl:value-of select="$id" />
-								</xsl:if>
-								<xsl:if test="$name != ''">
-									<xsl:value-of select="$name" />
-								</xsl:if>
-							</xsl:attribute>
-
-							<xsl:if test="$options">
-								<xsl:for-each select="$options/option">
-									<xsl:sort select="@sorting" />
-
-									<option value="{@value}">
-
-										<xsl:if test="($value != '' and $value = @value) or ($value = '' and @value = /root/content/formdata/field[@id = $id])">
-											<xsl:attribute name="selected">selected</xsl:attribute>
-										</xsl:if>
-
-										<xsl:value-of select="." />
-
-									</option>
-
-								</xsl:for-each>
-
-							</xsl:if>
-
-							<xsl:if test="$option_ids and $option_values">
-
-								<xsl:for-each select="$option_ids">
-									<option value="{.}">
-
-										<xsl:if test="($value != '' and $value = .) or ($value = '' and . = /root/content/formdata/field[@id = $id])">
-											<xsl:attribute name="selected">selected</xsl:attribute>
-										</xsl:if>
-
-										<xsl:call-template name="form_line_option">
-											<xsl:with-param name="position" select="position()" />
-											<xsl:with-param name="option_values" select="$option_values" />
-										</xsl:call-template>
-									</option>
-								</xsl:for-each>
-
-							</xsl:if>
-
-						</select>
-					</div>
-				</div>
 				<xsl:if test="/root/content/errors/error[@id = $id]">
 					<div class="error_box"><xsl:value-of select="/root/content/errors/error[@id = $id]" /></div>
 				</xsl:if>
