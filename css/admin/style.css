@@ -316,6 +316,7 @@
 	{
 		color:                          #ff0000;
 	}
+
 /* #### MENUS #################################################################### */
 
 	.nav
@@ -515,6 +516,7 @@
 			{
 				color:                          #fff;
 			}
+
 /* #### RESPONSIVE OVERRIDES ##################################################### */
 
 	/*** NAVIGATION ( < 800px ) ***/
@@ -1392,6 +1394,13 @@
 		thead > tr > th:last-child
 		{
 			text-align:                     right;
+		}
+
+		thead > tr.legend th
+		{
+			background:                     none;
+			text-align:                     left;
+			padding-top:                    10px;
 		}
 
 	tbody > tr > td
