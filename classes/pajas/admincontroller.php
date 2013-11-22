@@ -12,6 +12,9 @@ abstract class Pajas_Admincontroller extends Xsltcontroller
 	{
 		parent::__construct($request, $response);
 
+		// Disable cache by default
+		$this->response->headers('Cache-Control', 'no-cache');
+
 		if ($this->xslt_stylesheet == FALSE)
 			$this->xslt_stylesheet = 'admin/'.$this->request->controller();
 
