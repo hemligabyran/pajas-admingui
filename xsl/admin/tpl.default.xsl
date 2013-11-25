@@ -43,12 +43,16 @@
 				<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
 
 				<script type="text/javascript" src="{/root/meta/base}js/admin/main.js"></script>
+
 				<!-- Custom CSS files -->
 				<xsl:if test="$css_files">
 					<xsl:for-each select="$css_files/file">
 						<link rel="stylesheet" type="text/css" href="{.}" />
 					</xsl:for-each>
 				</xsl:if>
+				<xsl:for-each select="/root/meta/css/path">
+					<link rel="stylesheet" type="text/css" href="{.}" />
+				</xsl:for-each>
 
 				<!-- Custom JS files -->
 				<xsl:if test="$js_files">
@@ -56,16 +60,11 @@
 						<script type="text/javascript" src="{.}" />
 					</xsl:for-each>
 				</xsl:if>
+				<xsl:for-each select="/root/meta/js/path">
+					<script type="text/javascript" src="{.}"></script>
+				</xsl:for-each>
 
 				<title><xsl:value-of select="$title" /></title>
-				<!--[if lt IE 7]>
-					<style media="screen" type="text/css">
-						.contentwrap2
-						{
-							width: 100%;
-						}
-					</style>
-				<![endif]-->
 			</head>
 			<body>
 				<nav class="main_nav nav" role="navigation">
