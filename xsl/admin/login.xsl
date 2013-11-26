@@ -9,6 +9,9 @@
 
 	<!-- TEMPLATE -->
 	<xsl:template match="/">
+		<xsl:param name="js_files" />
+		<xsl:param name="css_files" />
+
 		<html>
 			<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,6 +20,27 @@
 				<link type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 				<link type="text/css" href="../css/admin/style.css" rel="stylesheet" media="all" />
 				<base href="http://{root/meta/domain}{/root/meta/base}admin/" />
+
+				<!-- Custom CSS files -->
+				<xsl:if test="$css_files">
+					<xsl:for-each select="$css_files/file">
+						<link rel="stylesheet" type="text/css" href="{.}" />
+					</xsl:for-each>
+				</xsl:if>
+				<xsl:for-each select="/root/meta/css/path">
+					<link rel="stylesheet" type="text/css" href="{.}" />
+				</xsl:for-each>
+
+				<!-- Custom JS files -->
+				<xsl:if test="$js_files">
+					<xsl:for-each select="$js_files/file">
+						<script type="text/javascript" src="{.}" />
+					</xsl:for-each>
+				</xsl:if>
+				<xsl:for-each select="/root/meta/js/path">
+					<script type="text/javascript" src="{.}"></script>
+				</xsl:for-each>
+
 				<title>Admin - Login</title>
 			</head>
 			<body>
