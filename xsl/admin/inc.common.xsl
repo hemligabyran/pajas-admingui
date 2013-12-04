@@ -16,7 +16,7 @@
 
 			<div class="account right">
 				<xsl:if test="/root/meta/user_data">
-					<span class="left"><xsl:text>Logged in as: </xsl:text><xsl:value-of select="/root/meta/user_data/username" /></span><a class="left stronglink" href="logout">Logga ut ›</a>
+					<span class="left"><xsl:text>Logged in as: </xsl:text><xsl:value-of select="/root/meta/user_data/username" /></span><a class="left stronglink" href="logout">Log out ›</a>
 				</xsl:if>
 			</div>
 		</header>
