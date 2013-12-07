@@ -116,7 +116,7 @@
 					<xsl:call-template name="form_line_label">
 						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
 						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+						<xsl:with-param name="id"><xsl:value-of select="$id" /></xsl:with-param>
 					</xsl:call-template>
 
 					<div class="select_wrapper">
@@ -158,7 +158,7 @@
 								<xsl:for-each select="$option_ids">
 									<option value="{.}">
 
-										<xsl:if test="($value != '' and $value = .) or ($value = '' and . = /root/content/formdata/field[@id = $id])">
+										<xsl:if test=". = /root/content/formdata/field[@id = $id]">
 											<xsl:attribute name="selected">selected</xsl:attribute>
 										</xsl:if>
 
@@ -238,7 +238,7 @@
 				<xsl:call-template name="form_line_label">
 					<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
 					<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-					<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+					<xsl:with-param name="id"><xsl:value-of select="$id" /></xsl:with-param>
 				</xsl:call-template>
 				<textarea id="{$id}" name="{$name}">
 					<xsl:if test="/root/content/errors/error[@id = $id]">
