@@ -250,7 +250,7 @@
 		background:                     linear-gradient(to bottom,    #f77e41 0%, #e96827 100%);
 		filter:                         progid:DXImageTransform.Microsoft.gradient(startColorstr='#f77e41', endColorstr='#e96827',GradientType=0);
 		border:                         none; /* reset */
-
+		float:                          left;
 	}
 
 		.longman.negative:hover
