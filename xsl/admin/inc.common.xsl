@@ -325,7 +325,7 @@
 					<xsl:call-template name="form_line_label">
 						<xsl:with-param name="label"><xsl:value-of select="$label" /></xsl:with-param>
 						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-						<xsl:param name="id"><xsl:value-of select="$id" /></xsl:param>
+						<xsl:with-param name="id"><xsl:value-of select="$id" /></xsl:with-param>
 					</xsl:call-template>
 				</div>
 
