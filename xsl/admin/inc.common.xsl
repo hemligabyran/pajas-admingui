@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+	<xsl:decimal-format decimal-separator="." grouping-separator="," />
+
 	<xsl:template name="header">
 		<xsl:param name="site_name" />
 
@@ -517,7 +519,29 @@
 				</select>
 			</xsl:if>
 		</xsl:if>
+	</xsl:template>
 
+	<!-- Pagination -->
+	<xsl:template name="pagination">
+		<xsl:param name="link_first" />
+		<xsl:param name="link_previous" />
+		<xsl:param name="current_page">1</xsl:param>
+		<xsl:param name="link_next" />
+		<xsl:param name="link_last" />
+
+		<div class="clear full_size">
+			<p style="text-align: center; width: 400px; margin: 1em auto;">
+				<a href="{$link_first}" style="font-size: 1.5em;">«</a>
+				<xsl:text>&#160;&#160;&#160;&#160;</xsl:text>
+				<a href="{$link_previous}" style="font-size: 1.5em;">‹</a>
+				<xsl:text>&#160;&#160;&#160;&#160;</xsl:text>
+				<xsl:value-of select="format-number($current_page, '###,###')" />
+				<xsl:text>&#160;&#160;&#160;&#160;</xsl:text>
+				<a href="{$link_next}" style="font-size: 1.5em;">›</a>
+				<xsl:text>&#160;&#160;&#160;&#160;</xsl:text>
+				<a href="{$link_last}" style="font-size: 1.5em;">»</a>
+			</p>
+		</div>
 	</xsl:template>
 
 </xsl:stylesheet>
