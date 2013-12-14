@@ -50,9 +50,9 @@
 					</div>
 					<div class="wrap">
 						<form method="post" action="login/do">
-							<xsl:if test="root/content/error">
+							<xsl:if test="root/content/errors/error">
 								<div class="message">
-									<xsl:value-of select="root/content/error" />
+									<xsl:value-of select="root/content/errors/error" />
 								</div>
 							</xsl:if>
 							<div class="inputwrapper">
