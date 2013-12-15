@@ -251,6 +251,7 @@
 		filter:                         progid:DXImageTransform.Microsoft.gradient(startColorstr='#f77e41', endColorstr='#e96827',GradientType=0);
 		border:                         none; /* reset */
 		float:                          left;
+		margin-left:                    0;
 	}
 
 		.longman.negative:hover
