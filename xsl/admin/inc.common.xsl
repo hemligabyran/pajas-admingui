@@ -182,7 +182,7 @@
 			</xsl:when>
 
 			<!-- Inputs of different types -->
-			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel' or $type = 'time' or $type = 'date'">
+			<xsl:when test="$type = 'text' or $type = 'password' or $type = 'email' or $type = 'tel' or $type = 'time' or $type = 'date' or $type = 'number' or $type = 'datetime-local'">
 				<div class="inputwrapper">
 					<xsl:if test="/root/content/errors/error[@id = $id]">
 						<xsl:attribute name="class">inputwrapper error</xsl:attribute>
@@ -334,40 +334,6 @@
 				<xsl:if test="/root/content/errors/error[@id = $id]">
 					<div class="error_box"><xsl:value-of select="/root/content/errors/error[@id = $id]" /></div>
 				</xsl:if>
-			</xsl:when>
-
-			<!-- Date time local -->
-			<xsl:when test="$type = 'number'">
-				<!--div class="inputwrapper"-->
-					<label><xsl:value-of select="$label" /></label>
-					<input type="number" id="{$id}" name="{$name}" value="{$value}" style="border: none;">
-						<xsl:attribute name="name">
-							<xsl:if test="$name = ''">
-								<xsl:value-of select="$id" />
-							</xsl:if>
-							<xsl:if test="$name != ''">
-								<xsl:value-of select="$name" />
-							</xsl:if>
-						</xsl:attribute>
-					</input>
-				<!--/div-->
-			</xsl:when>
-
-			<!-- Date time local -->
-			<xsl:when test="$type = 'datetime-local'">
-				<div class="inputwrapper">
-					<label><xsl:value-of select="$label" /></label>
-					<input class="datetime" type="datetime-local" id="{$id}" name="{$name}" value="{$value}" style="border: none;">
-						<xsl:attribute name="name">
-							<xsl:if test="$name = ''">
-								<xsl:value-of select="$id" />
-							</xsl:if>
-							<xsl:if test="$name != ''">
-								<xsl:value-of select="$name" />
-							</xsl:if>
-						</xsl:attribute>
-					</input>
-				</div>
 			</xsl:when>
 
 			<!-- Plain text, no input -->
