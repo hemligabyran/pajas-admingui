@@ -1071,7 +1071,8 @@
 		/* Nothing to see here ;) only for searching..*/
 	}
 
-	form label
+	form label,
+	.inputlabel
 	{
 		display:                        block;
 		clear:                          both;
@@ -1090,6 +1091,17 @@
 		margin:                         0 4.5px;
 		float:                          left;
 	}
+		/* some wrappers are within other elements, should still have the margin */
+		.inputwrapper
+		{
+			margin:                         0 4.5px;
+		}
+			/* some wrappers contain inputs with no label */
+			.inputwrapper.no_label
+			{
+				margin-top:                     24px;
+			}
+
 		/*.inputwrapper:nth-child(2n)
 		{
 			margin-right:                   0;
@@ -1109,6 +1121,21 @@
 		width:                          450px;
 	}
 
+	fieldset .list
+	{
+		clear:                          both;
+	}
+
+		fieldset .list.deleteable_items .item>div
+		{
+			width:                          300px;
+			float:                          left;
+		}
+
+		fieldset .list.deleteable_items .item>.negative
+		{
+			float:                          right;
+		}
 	/*
 		Note:
 		<label class="checkbox">Text<input type="checkbox"/></label>
@@ -1128,7 +1155,8 @@
 	input,
 	textarea,
 	.select_wrapper,
-	fieldset
+	fieldset,
+	.infobox
 	{
 		text-decoration:                none;
 		border:                         1px solid #ccc;
@@ -1237,10 +1265,17 @@
 			color:                          #000;
 			padding:                        0;
 		}
-	input
+	input,
+	.infobox
 	{
 		height:                           2.5rem;
 		min-width:                        175px;
+	}
+
+	.infobox
+	{
+		line-height:                      2.5rem;
+		background-color:                 #ffffcc;
 	}
 
 	.select_wrapper
