@@ -15,11 +15,13 @@
 		<html>
 			<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+				<base href="{/root/meta/base}admin/" />
+
 				<link type="text/css" href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" />
 				<link type="text/css" href="http://fonts.googleapis.com/css?family=Chau+Philomene+One" rel="stylesheet" />
 				<link type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 				<link type="text/css" href="../css/admin/style.css" rel="stylesheet" media="all" />
-				<base href="http://{root/meta/domain}{/root/meta/base}admin/" />
 
 				<!-- Custom CSS files -->
 				<xsl:if test="$css_files">
