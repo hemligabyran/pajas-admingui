@@ -390,7 +390,7 @@
 			position:                       absolute;
 			left:                           0px;
 			top:                            0px;
-			background:                     url('../../../img/admin/sprites.png') no-repeat;
+			background:                     url('../../img/admin/sprites.png') no-repeat;
 			background-position:            12px -47px;
 		}
 
@@ -424,7 +424,7 @@
 				position:                       absolute;
 				left:                           0px;
 				top:                            0px;
-				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background:                     url('../../img/admin/sprites.png') no-repeat;
 				background-position:            12px -80px;
 			}
 			.menu .item.active:after
@@ -437,7 +437,7 @@
 				position:                       absolute;
 				left:                           180px;
 				top:                            0px;
-				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background:                     url('../../img/admin/sprites.png') no-repeat;
 				background-position:            0 0;
 			}
 
@@ -459,7 +459,7 @@
 				position:                       absolute;
 				left:                           142px;
 				top:                            0px;
-				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background:                     url('../../img/admin/sprites.png') no-repeat;
 				background-position:            26px -114px;
 			}
 				.menu .item.active > a:after,
@@ -473,7 +473,7 @@
 					position:                       absolute;
 					left:                           142px;
 					top:                            0px;
-					background:                     url('../../../img/admin/sprites.png') no-repeat;
+					background:                     url('../../img/admin/sprites.png') no-repeat;
 					background-position:            26px -149px;
 				}
 
@@ -503,7 +503,7 @@
 				display:                        block;
 				width:                          9px;
 				height:                         6px;
-				background:                     url('../../../img/admin/sprites.png') no-repeat;
+				background:                     url('../../img/admin/sprites.png') no-repeat;
 				background-position:            0px -227px;
 				margin:                         0 auto;
 			}
@@ -1288,7 +1288,7 @@
 		margin-bottom:                  0;*/
 		padding:                        0;
 		overflow:                       hidden;
-		background:                     url('../../../img/admin/sprites.png') no-repeat;
+		background:                     url('../../img/admin/sprites.png') no-repeat;
 		background-position:            180px -265px;
 	}
 
