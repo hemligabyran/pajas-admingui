@@ -312,7 +312,8 @@
 							(
 								$type = 'checkbox' and
 								/root/content/formdata/field[@id = $id] and
-								/root/content/formdata/field[@id = $id] != '0'
+								/root/content/formdata/field[@id = $id] != '0' and
+								/root/content/formdata/field[@id = $id] != 'false'
 							)
 							or
 							$checked != '0'
