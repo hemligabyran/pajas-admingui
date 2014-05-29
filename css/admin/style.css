@@ -1223,16 +1223,24 @@
 		margin-bottom:                  none;
 		padding:                        none;
 	}
+
 		.inputwrapper_checkbox > label
 		{
 			float:                          left;
 			clear:                          none;
 		}
+
 	fieldset
 	{
 		max-width:                      422px;
 		padding:                        9px;
 	}
+
+		fieldset > p
+		{
+			max-width:                    422px;
+			overflow:                     hidden;
+		}
 
 		fieldset > legend
 		{
