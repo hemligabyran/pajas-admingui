@@ -1126,13 +1126,13 @@
 		clear:                          both;
 	}
 
-		fieldset .list.deleteable_items .item>div
+		fieldset .list.deleteable_items .item > div
 		{
 			width:                          300px;
 			float:                          left;
 		}
 
-		fieldset .list.deleteable_items .item>.negative
+		fieldset .list.deleteable_items .item > .negative
 		{
 			float:                          right;
 		}
@@ -1236,10 +1236,16 @@
 		padding:                        9px;
 	}
 
+		fieldset.wide
+		{
+			max-width:                      633px;
+			width:                          633px;
+		}
+
 		fieldset > p
 		{
-			max-width:                    422px;
-			overflow:                     hidden;
+			max-width:                      422px;
+			overflow:                       hidden;
 		}
 
 		fieldset > legend

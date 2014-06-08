@@ -13,7 +13,6 @@ browser.msie_old = false;
 	$(document).ready(function(){
 
 		//************ Setups                  ************************************
-
 			if(browser.msie){
 				$('html').addClass('ie');
 				if ($('html').hasClass('no-cssgradients'))
@@ -39,4 +38,23 @@ browser.msie_old = false;
 						'firstDay'   :  1
 					});
 				}
+
+		//************ Generic functionality   ************************************
+			$('.autosubmit').change(function(e){
+				$(this).closest('form').submit();
+			});
+
+			$('a.no_refresh').click(function(e){
+				e.preventDefault();
+				$.get($(this).attr('href'));
+			});
+
+			$('a.hide_parent').click(function(e){
+				$(this).closest('.parent').hide();
+			});
+
+			$('a.remove_parent').click(function(e){
+				$(this).closest('.parent').remove();
+			});
+
 	});
