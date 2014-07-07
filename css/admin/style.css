@@ -259,6 +259,11 @@
 			background:                     #f77e41;
 		}
 
+		.longman.negative.right
+		{
+			float:                          right;
+		}
+
 	button.inline
 	{
 		display:                        inline;
