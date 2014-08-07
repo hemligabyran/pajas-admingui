@@ -49,11 +49,11 @@ browser.msie_old = false;
 				$.get($(this).attr('href'));
 			});
 
-			$('a.hide_parent').click(function(e){
+			$('.hide_parent').click(function(e){
 				$(this).closest('.parent').hide();
 			});
 
-			$('a.remove_parent').click(function(e){
+			$('.remove_parent').click(function(e){
 				$(this).closest('.parent').remove();
 			});
 
