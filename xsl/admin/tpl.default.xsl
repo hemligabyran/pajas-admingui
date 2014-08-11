@@ -29,9 +29,9 @@
 
 				<base href="{/root/meta/base}admin/" />
 
-				<link type="text/css" href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" />
-				<link type="text/css" href="http://fonts.googleapis.com/css?family=Chau+Philomene+One" rel="stylesheet" />
-				<link type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
+				<link type="text/css" href="//fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" />
+				<link type="text/css" href="//fonts.googleapis.com/css?family=Chau+Philomene+One" rel="stylesheet" />
+				<link type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" />
 				<link type="text/css" href="../css/admin/style.css" rel="stylesheet" media="all" />
 
 				<!-- jQuery -->
@@ -43,7 +43,7 @@
 				<script type="text/javascript" src="//code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
 				<script type="text/javascript" src="../js/admin/jquery-ui-timepicker-addon.js"></script>
 				<script type="text/javascript" src="../js/admin/jquery.mjs.nestedsortable.js"></script>
-				<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+				<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
 
 				<script type="text/javascript" src="../js/admin/main.js"></script>
 
