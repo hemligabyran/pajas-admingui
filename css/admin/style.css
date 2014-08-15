@@ -386,6 +386,7 @@
 		padding:                        3px 0;
 		position:                       relative;
 	}
+
 		.menu .item:before
 		{
 			content:                        "";
@@ -419,6 +420,7 @@
 			color:                          #000;
 			background-color:               #fff;
 		}
+
 			.menu .item.active:before,
 			.menu .item:hover:before
 			{
@@ -432,6 +434,7 @@
 				background:                     url('../../img/admin/sprites.png') no-repeat;
 				background-position:            12px -80px;
 			}
+
 			.menu .item.active:after
 			{
 				content:                        "";
@@ -454,6 +457,7 @@
 			display:                        block;
 			margin-left:                    1rem;
 		}
+
 			.menu .item > a:after
 			{
 				content:                        "";
@@ -467,6 +471,7 @@
 				background:                     url('../../img/admin/sprites.png') no-repeat;
 				background-position:            26px -114px;
 			}
+
 				.menu .item.active > a:after,
 				.menu .item:hover > a:after
 				{
@@ -518,6 +523,7 @@
 				display:                        block;
 				line-height:                    30px;
 			}
+
 			.tabs > .item.active > a
 			{
 				color:                          #fff;
@@ -564,7 +570,7 @@
 		padding-top:                   100px;
 	}
 
-	.modal_block>.opacityhack
+	.modal_block > .opacityhack
 	{
 		background:                    #000;
 		height:                        100%;
@@ -593,7 +599,8 @@
 		position:                      relative;
 		z-index:                       2001;
 	}
-		.modal_block .popupbox>.close
+
+		.modal_block .popupbox > .close
 		{
 			display:                       block;
 			background:                    url('../img/elements.png') no-repeat 17px 17px;
@@ -609,7 +616,7 @@
 			height:                        20px;
 		}
 
-		.modal_block .popupbox>.page_content
+		.modal_block .popupbox > .page_content
 		{
 
 		}
@@ -628,13 +635,14 @@
 
 		.message.hint
 		{
-
 		}
+
 		.message.error
 		{
 			background-color:               #7b1323;
 			color:                          #fff;
 		}
+
 			.message.error a
 			{
 				color:                          #fff;
@@ -661,6 +669,7 @@
 		border-bottom:                  1px solid #ccc;
 		height:                         60px;
 	}
+
 		.pageheader .heading
 		{
 			font:                           3rem/4rem 'Chau Philomene One', sans-serif;
@@ -671,36 +680,6 @@
 			text-shadow:                    2px 2px rgba(0,0,0,.3);
 		}
 
-		.cart
-		{
-			text-align:                     right;
-			font-size:                      0.91666666666667em;
-			margin:                         10px 0 12px;
-		}
-
-			.to_checkout
-			{
-				display:                        inline;
-				text-decoration:                none;
-				margin-left:                    18px;
-				padding:                        8px 19px 6px 37px;
-				position:                       relative;
-			}
-
-				.to_checkout:before
-				{
-					content:                        '';
-					display:                        block;
-					position:                       absolute;
-					top:                            12px;
-					left:                           20px;
-					background:                     url('/img/elements.png') no-repeat;
-					background-position:            left -1068px;
-					height:                         8px;
-					width:                          12px;
-				}
-
-		.cart,
 		.account
 		{
 			margin-right:                   1rem;
@@ -754,12 +733,13 @@
 		border-right:                   1px solid #000;
 		position:                       absolute;
 		float:                          none;
-
 	}
+
 		.main_nav .item
 		{
 			max-width:                      180px;
 		}
+
 			.main_nav .item > a
 			{
 				margin-left:                    2rem;
@@ -802,7 +782,8 @@
 				background-position:            0px -885px;
 			}
 
-		.pagefooter a{
+		.pagefooter a
+		{
 			color:                          #fff;
 		}
 
@@ -910,11 +891,13 @@
 	{
 		margin-top:                     1rem;
 	}
+
 	.controls > a,
 	.controls > span
 	{
 		margin-top:                     .5rem;
 	}
+
 		.controls > a.longman
 		{
 			margin-top:                     0;
@@ -1041,8 +1024,8 @@
 	{
 		max-width:                      340px;
 		margin:                         10% auto 0;
-
 	}
+
 		.loginbox .wrap
 		{
 			/*max-width:                      275px;*/
@@ -1054,6 +1037,7 @@
 			margin:                         1rem 0 0 0;
 			padding:                        20px;
 		}
+
 			.loginbox .wrap .inputwrapper
 			{
 		 		margin:                         0;
@@ -1096,11 +1080,13 @@
 		margin:                         0 4.5px;
 		float:                          left;
 	}
+
 		/* some wrappers are within other elements, should still have the margin */
 		.inputwrapper
 		{
 			margin:                         0 4.5px;
 		}
+
 			/* some wrappers contain inputs with no label */
 			.inputwrapper.no_label
 			{
@@ -1189,10 +1175,9 @@
 
 	.inputwrapper_checkbox_only
 	{
-		width:  30px;
-		min-width: 30px;
+		width:                          30px;
+		min-width:                      30px;
 	}
-
 
 		.inputwrapper_checkbox_only > input
 		{
@@ -1211,6 +1196,7 @@
 			margin-bottom:                  none;
 			padding:                        none;
 		}
+
 	.inputwrapper_checkbox > input
 	{
 		float:                          left;
@@ -1275,6 +1261,7 @@
 		border:                         none;
 		box-shadow:                     none;
 	}
+
 		fieldset > fieldset > legend
 		{
 			font:                           inherit;
@@ -1284,6 +1271,7 @@
 			color:                          #000;
 			padding:                        0;
 		}
+
 	input,
 	.infobox
 	{
@@ -1349,8 +1337,8 @@
 		box-shadow:                     none;
 		float:                          left;
 		margin-right:                   1rem;
-
 	}
+
 	input[type='number']
 	{
 		margin:                         0;
@@ -1375,6 +1363,7 @@
 		{
 			/*display:                       none;*/
 		}
+
 		input[type='checkbox'] + .label
 		{
 			display:                       inline-block;
@@ -1385,6 +1374,7 @@
 			background:                    url('/img/common_objects_sprite.gif') no-repeat scroll 100% center transparent;
 			background-position:           7px  -330px;
 		}
+
 		input[type='checkbox']:checked + .label
 		{
 			display:                       inline-block;
@@ -1431,6 +1421,7 @@
 	{
 		width:                          100%;
 	}
+
 	table
 	{
 		/*width:                          622px;*/
@@ -1446,6 +1437,7 @@
 		background-color:               #f3f0ea;
 		white-space:                    nowrap;
 	}
+
 		thead > tr > th:last-child
 		{
 			text-align:                     right;
@@ -1460,7 +1452,6 @@
 
 	tbody > tr > td
 	{
-
 		background-color:               #f3f0ea;
 		padding:                        5px;
 		vertical-align:                 top;
