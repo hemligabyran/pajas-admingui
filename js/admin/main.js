@@ -40,20 +40,20 @@ browser.msie_old = false;
 				}
 
 		//************ Generic functionality   ************************************
-			$('.autosubmit').change(function(e){
+			$('body').on('change', '.autosubmit', function(){
 				$(this).closest('form').submit();
 			});
 
-			$('a.no_refresh').click(function(e){
+			$('body').on('click', 'a.no_refresh', function(){
 				e.preventDefault();
 				$.get($(this).attr('href'));
 			});
 
-			$('.hide_parent').click(function(e){
+			$('body').on('click', '.hide_parent', function(){
 				$(this).closest('.parent').hide();
 			});
 
-			$('.remove_parent').click(function(e){
+			$('body').on('click', '.remove_parent', function(){
 				$(this).closest('.parent').remove();
 			});
 
