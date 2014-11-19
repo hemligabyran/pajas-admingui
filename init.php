@@ -25,7 +25,7 @@ Route::set('admin', 'admin/<controller>(/<action>(/<options>))',
 	array(
 		'action' => '[a-zA-Z0-9_-]+',
 		'options' => '.*',
-  ))
+	))
 	->defaults(array(
 		'directory'  => 'admin',
 		'controller' => 'admin',

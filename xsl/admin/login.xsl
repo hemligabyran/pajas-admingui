@@ -51,7 +51,7 @@
 						<h1 class="logo">Pajas</h1>
 					</div>
 					<div class="wrap">
-						<form method="post" action="login/do">
+						<form method="post" action="login/do" autocomplete="off">
 							<xsl:if test="root/content/errors/error">
 								<div class="message">
 									<xsl:value-of select="root/content/errors/error" />
