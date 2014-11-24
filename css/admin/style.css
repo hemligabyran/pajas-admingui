@@ -718,11 +718,28 @@
 	}
 
 		.page_content > form,
-		.page_content > .module
+		.page_content > .module,
+		.page_content > .col
 		{
 			float:                          left;
 			margin-right:                   10px;
 		}
+
+		.page_content > .col
+		{
+			width:                          442px;
+		}
+
+			.page_content > .col > form
+			{
+				width:                          100%;
+			}
+
+			.page_content fieldset > .col
+			{
+				width:                          210px;
+				float:                          left;
+			}
 
 	.main_nav
 	{
