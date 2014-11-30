@@ -341,7 +341,7 @@
 			<xsl:when test="$type = 'none'">
 				<div class="inputwrapper">
 					<label><xsl:value-of select="$label" /></label>
-					<input type="text" id="{$id}" name="{$name}" disabled="disabled" style="border: none;">
+					<input type="text" id="{$id}" name="{$name}" disabled="disabled">
 						<xsl:attribute name="value">
 							<xsl:if test="$value = '' and /root/content/formdata/field[@id = $id]">
 								<xsl:value-of select="/root/content/formdata/field[@id = $id]" />
