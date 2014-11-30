@@ -57,4 +57,24 @@ browser.msie_old = false;
 				$(this).closest('.parent').remove();
 			});
 
+			// Only allow numbers in numval classed boxes
+			$('input.numval').on('change', function(e) {
+				var val = $(this).val();
+
+				val = val.replace(',', '.');
+				val = val.replace(/[^\d.-]/g, '');
+
+				if (val.replace('.', '') != val)
+					val = removeAllButLast(val, '.');
+
+				$(this).val(val);
+			});
+
 	});
+
+//************ Global functions          ************************************
+
+	function removeAllButLast(string, token) {
+		var parts = string.split(token);
+		return parts.slice(0,-1).join('') + token + parts.slice(-1)
+	}

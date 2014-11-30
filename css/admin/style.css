@@ -1104,11 +1104,28 @@
 			margin:                         0 4.5px;
 		}
 
+			.inputwrapper.thin
+			{
+				width:                          auto;
+			}
+
+			.inputwrapper.thin > input
+			{
+				width:                          138px;
+				min-width:                      0;
+			}
+
 			/* some wrappers contain inputs with no label */
 			.inputwrapper.no_label
 			{
 				margin-top:                     24px;
 			}
+
+		.inputbutton
+		{
+			float:                          right !important;
+			margin-top:                     24px;
+		}
 
 		/*.inputwrapper:nth-child(2n)
 		{

@@ -56,6 +56,7 @@
 		<xsl:param name="value" />
 		<xsl:param name="checked">0</xsl:param>
 		<xsl:param name="label" />
+		<xsl:param name="class" />
 
 		<!-- This -->
 		<xsl:param name="options" />
@@ -124,6 +125,10 @@
 					<div class="select_wrapper">
 						<select id="{$id}">
 
+							<xsl:if test="$class">
+								<xsl:attribute name="class"><xsl:value-of select="$class" /></xsl:attribute>
+							</xsl:if>
+
 							<xsl:if test="$disabled">
 								<xsl:attribute name="disabled">disabled</xsl:attribute>
 							</xsl:if>
@@ -142,13 +147,11 @@
 									<xsl:sort select="@sorting" />
 
 									<option value="{@value}">
-
 										<xsl:if test="($value != '' and $value = @value) or ($value = '' and @value = /root/content/formdata/field[@id = $id])">
 											<xsl:attribute name="selected">selected</xsl:attribute>
 										</xsl:if>
 
 										<xsl:value-of select="." />
-
 									</option>
 
 								</xsl:for-each>
@@ -159,8 +162,7 @@
 
 								<xsl:for-each select="$option_ids">
 									<option value="{.}">
-
-										<xsl:if test=". = /root/content/formdata/field[@id = $id]">
+										<xsl:if test="($value != '' and $value = .) or ($value = '' and . = /root/content/formdata/field[@id = $id])">
 											<xsl:attribute name="selected">selected</xsl:attribute>
 										</xsl:if>
 
@@ -195,6 +197,10 @@
 					</xsl:call-template>
 
 					<input type="{$type}" id="{$id}">
+
+						<xsl:if test="$class">
+							<xsl:attribute name="class"><xsl:value-of select="$class" /></xsl:attribute>
+						</xsl:if>
 
 						<xsl:if test="$disabled = 'true'">
 							<xsl:attribute name="disabled">disabled</xsl:attribute>
@@ -243,6 +249,11 @@
 					<xsl:with-param name="id"><xsl:value-of select="$id" /></xsl:with-param>
 				</xsl:call-template>
 				<textarea id="{$id}" name="{$name}">
+
+					<xsl:if test="$class">
+						<xsl:attribute name="class"><xsl:value-of select="$class" /></xsl:attribute>
+					</xsl:if>
+
 					<xsl:if test="/root/content/errors/error[@id = $id]">
 						<xsl:attribute name="class">error</xsl:attribute>
 					</xsl:if>
@@ -291,6 +302,11 @@
 				<div class="inputwrapper_checkbox">
 
 					<input type="{$type}" id="{$id}" value="{$value}">
+
+						<xsl:if test="$class">
+							<xsl:attribute name="class"><xsl:value-of select="$class" /></xsl:attribute>
+						</xsl:if>
+
 						<xsl:if test="$disabled">
 							<xsl:attribute name="disabled">disabled</xsl:attribute>
 						</xsl:if>
@@ -342,6 +358,11 @@
 				<div class="inputwrapper">
 					<label><xsl:value-of select="$label" /></label>
 					<input type="text" id="{$id}" name="{$name}" disabled="disabled">
+
+						<xsl:if test="$class">
+							<xsl:attribute name="class"><xsl:value-of select="$class" /></xsl:attribute>
+						</xsl:if>
+
 						<xsl:attribute name="value">
 							<xsl:if test="$value = '' and /root/content/formdata/field[@id = $id]">
 								<xsl:value-of select="/root/content/formdata/field[@id = $id]" />
