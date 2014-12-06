@@ -63,6 +63,7 @@ browser.msie_old = false;
 
 				val = val.replace(',', '.');
 				val = val.replace(/[^\d.-]/g, '');
+				val = val.replace(/^00/, '');
 
 				if (val.replace('.', '') != val)
 					val = removeAllButLast(val, '.');
