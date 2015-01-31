@@ -57,6 +57,17 @@ browser.msie_old = false;
 				$(this).closest('.parent').remove();
 			});
 
+			$('body').on('click', '.show_hide_child', function(){
+				var child = $(this).find('.child');
+
+				if (child.hasClass('hidden')){
+					child.removeClass('hidden');
+				}else{
+					child.addClass('hidden');
+				}
+
+			});
+
 			// Only allow numbers in numval classed boxes
 			$('input.numval').on('change', function(e) {
 				var val = $(this).val();
