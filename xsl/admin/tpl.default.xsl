@@ -21,6 +21,7 @@
 		<xsl:param name="js_files" />
 		<xsl:param name="css_files" />
 		<xsl:param name="site_name" />
+		<xsl:param name="ver_name" />
 
 		<html>
 			<head>
@@ -50,21 +51,41 @@
 				<!-- Custom CSS files -->
 				<xsl:if test="$css_files">
 					<xsl:for-each select="$css_files/file">
-						<link rel="stylesheet" type="text/css" href="{.}" />
+						<xsl:if test="$ver_name = ''">
+							<link rel="stylesheet" type="text/css" href="{.}" />
+						</xsl:if>
+						<xsl:if test="not($ver_name = '')">
+							<link rel="stylesheet" type="text/css" href="{.}?ver={$ver_name}" />
+						</xsl:if>
 					</xsl:for-each>
 				</xsl:if>
 				<xsl:for-each select="/root/meta/css/path">
-					<link rel="stylesheet" type="text/css" href="{.}" />
+					<xsl:if test="$ver_name = ''">
+						<link rel="stylesheet" type="text/css" href="{.}" />
+					</xsl:if>
+					<xsl:if test="not($ver_name = '')">
+						<link rel="stylesheet" type="text/css" href="{.}?ver={$ver_name}" />
+					</xsl:if>
 				</xsl:for-each>
 
 				<!-- Custom JS files -->
 				<xsl:if test="$js_files">
 					<xsl:for-each select="$js_files/file">
-						<script type="text/javascript" src="{.}" />
+						<xsl:if test="$ver_name = ''">
+							<script type="text/javascript" src="{.}" />
+						</xsl:if>
+						<xsl:if test="not($ver_name = '')">
+							<script type="text/javascript" src="{.}?ver={$ver_name}" />
+						</xsl:if>
 					</xsl:for-each>
 				</xsl:if>
 				<xsl:for-each select="/root/meta/js/path">
-					<script type="text/javascript" src="{.}"></script>
+					<xsl:if test="$ver_name = ''">
+						<script type="text/javascript" src="{.}"></script>
+					</xsl:if>
+					<xsl:if test="not($ver_name = '')">
+						<script type="text/javascript" src="{.}?ver={$ver_name}"></script>
+					</xsl:if>
 				</xsl:for-each>
 
 				<title><xsl:value-of select="$title" /></title>
