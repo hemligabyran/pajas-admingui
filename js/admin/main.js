@@ -1,5 +1,5 @@
 var browser = {};
-browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase());
+browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && ! /webkit/.test(navigator.userAgent.toLowerCase());
 browser.webkit  = /webkit/.test(navigator.userAgent.toLowerCase());
 browser.opera   = /opera/.test(navigator.userAgent.toLowerCase());
 browser.msie    = /msie/.test(navigator.userAgent.toLowerCase());
@@ -24,7 +24,7 @@ browser.msie_old = false;
 			}
 
 			// Date-time - dont do this on chrome and mobile-devices.
-				if((!isChrome()) && ($('body').css('max-width') != '800px')){
+				if (( ! isChrome()) && ($('body').css('max-width') != '800px')){
 					$('.datetime').datetimepicker(
 					{
 						'dayNamesMin': ['Sö','Må','Ti','On','To','Fr','Lö'],
@@ -40,21 +40,32 @@ browser.msie_old = false;
 				}
 
 		//************ Generic functionality   ************************************
-			$('body').on('change', '.autosubmit', function(){
+			$('body').on('change', '.autosubmit', function() {
 				$(this).closest('form').submit();
 			});
 
-			$('body').on('click', 'a.no_refresh', function(){
+			$('body').on('click', 'a.no_refresh', function(e) {
 				e.preventDefault();
 				$.get($(this).attr('href'));
 			});
 
-			$('body').on('click', '.hide_parent', function(){
+			$('body').on('click', '.hide_parent', function() {
 				$(this).closest('.parent').hide();
 			});
 
-			$('body').on('click', '.remove_parent', function(){
+			$('body').on('click', '.remove_parent', function() {
 				$(this).closest('.parent').remove();
+			});
+
+			$('body').on('click', '.show_hide_child', function() {
+				var child = $(this).find('.child');
+
+				if (child.hasClass('hidden')){
+					child.removeClass('hidden');
+				}else{
+					child.addClass('hidden');
+				}
+
 			});
 
 			// Only allow numbers in numval classed boxes
@@ -77,5 +88,5 @@ browser.msie_old = false;
 
 	function removeAllButLast(string, token) {
 		var parts = string.split(token);
-		return parts.slice(0,-1).join('') + token + parts.slice(-1)
+		return parts.slice(0, - 1).join('') + token + parts.slice(- 1);
 	}
