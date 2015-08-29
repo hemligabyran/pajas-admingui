@@ -65,8 +65,13 @@ browser.msie_old = false;
 				}else{
 					child.addClass('hidden');
 				}
-
 			});
+
+			$('body').on('click', '.confirm', function(e) {
+				if ( ! confirm('This action can not be undone. Are you sure?')) {
+					e.preventDefault();
+				}
+			})
 
 			// Only allow numbers in numval classed boxes
 			$('input.numval').on('change', function(e) {
