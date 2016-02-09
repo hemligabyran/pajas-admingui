@@ -1317,6 +1317,11 @@
 		min-width:                        175px;
 	}
 
+		.fileupload_wrapper > input
+		{
+			width:                            175px;
+		}
+
 	.infobox
 	{
 		line-height:                      2.5rem;
