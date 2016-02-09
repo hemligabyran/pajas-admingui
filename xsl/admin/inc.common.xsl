@@ -71,6 +71,8 @@
 
 		<xsl:param name="type">text</xsl:param>
 
+		<xsl:param name="autocomplete" />
+
 		<!-- Only used if type is textarea -->
 		<xsl:param name="rows" />
 		<xsl:param name="cols" />
@@ -197,6 +199,10 @@
 					</xsl:call-template>
 
 					<input type="{$type}" id="{$id}">
+
+						<xsl:if test="$autocomplete != ''">
+							<xsl:attribute name="autocomplete"><xsl:value-of select="$autocomplete" /></xsl:attribute>
+						</xsl:if>
 
 						<xsl:if test="$class">
 							<xsl:attribute name="class"><xsl:value-of select="$class" /></xsl:attribute>
@@ -457,6 +463,10 @@
 
 		<xsl:if test="not($options) or not($options/*)">
 			<input type="{$type}">
+
+				<xsl:if test="$autocomplete != ''">
+					<xsl:attribute name="autocomplete"><xsl:value-of select="$autocomplete" /></xsl:attribute>
+				</xsl:if>
 
 				<xsl:if test="$id != ''">
 					<xsl:attribute name="id"><xsl:value-of select="$id" /></xsl:attribute>
